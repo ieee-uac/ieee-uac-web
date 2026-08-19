@@ -478,3 +478,11 @@ p { color: var(--muted); line-height: 1.7; }
     opacity: 0.8;
   }
 }
+/* Hover visible en tarjetas */
+.team-card.reveal.visible:hover,
+.event-card.reveal.visible:hover,
+.feature-card.reveal.visible:hover,
+.pillars article.reveal.visible:hover {
+  transform: translateY(-10px) scale(1.02);
+  box-shadow: 0 18px 38px rgba(92, 10, 19, 0.16);
+}
