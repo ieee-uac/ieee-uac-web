@@ -1,8 +1,7 @@
 const menuBtn = document.getElementById('menuBtn');
 const navLinks = document.getElementById('navLinks');
 const year = document.getElementById('year');
-const form = document.getElementById('contactForm');
-const formMessage = document.getElementById('formMessage');
+
 
 year.textContent = new Date().getFullYear();
 
@@ -18,10 +17,7 @@ navLinks.querySelectorAll('a').forEach((link) => {
   });
 });
 
-form.addEventListener('submit', (event) => {
-  event.preventDefault();
-  formMessage.textContent = 'Formulario visual listo. Reemplaza esta acción por el Google Form o backend oficial de IEEE UAC.';
-});
+
 const revealElements = document.querySelectorAll(
   '.section, .team-card, .event-card, .feature-card, .pillars article'
 );
