@@ -294,4 +294,44 @@ p { color: var(--muted); line-height: 1.7; }
   font-size: 0.65rem;
   padding: 10px 14px;
 }
+  /* Animaciones e interacción */
+.team-card,
+.event-card,
+.pillars article,
+.feature-card,
+.btn {
+  transition: transform 0.3s ease, box-shadow 0.3s ease;
+}
+
+.team-card:hover,
+.event-card:hover,
+.pillars article:hover,
+.feature-card:hover {
+  transform: translateY(-6px);
+}
+
+.btn:hover {
+  transform: translateY(-2px);
+}
+
+/* Aparición suave al hacer scroll */
+.reveal {
+  opacity: 0;
+  transform: translateY(28px);
+  transition: opacity 0.7s ease, transform 0.7s ease;
+}
+
+.reveal.visible {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .reveal,
+  .reveal.visible {
+    opacity: 1;
+    transform: none;
+    transition: none;
+  }
+}
 }
