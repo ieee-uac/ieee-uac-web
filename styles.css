@@ -335,7 +335,6 @@ p { color: var(--muted); line-height: 1.7; }
     transition: none;
   }
 }
-}
 /* Movimiento continuo de la portada */
 .hero-panel {
   animation: panelFloat 6s ease-in-out infinite;
@@ -408,16 +407,6 @@ p { color: var(--muted); line-height: 1.7; }
   }
 }
 
-@media (prefers-reduced-motion: reduce) {
-  .hero-panel,
-  .chip-one,
-  .chip-two,
-  .chip-three,
-  .ring-a,
-  .ring-b {
-    animation: none;
-  }
-}
 /* Movimiento continuo */
 .hero-panel {
   animation: flotarPanel 5s ease-in-out infinite;
