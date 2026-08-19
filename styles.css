@@ -336,3 +336,85 @@ p { color: var(--muted); line-height: 1.7; }
   }
 }
 }
+/* Movimiento continuo de la portada */
+.hero-panel {
+  animation: panelFloat 6s ease-in-out infinite;
+}
+
+.chip-one {
+  animation: chipOneFloat 4.8s ease-in-out infinite;
+}
+
+.chip-two {
+  animation: chipTwoFloat 5.4s ease-in-out infinite;
+}
+
+.chip-three {
+  animation: chipThreeFloat 4.5s ease-in-out infinite;
+}
+
+.ring-a {
+  animation: ringPulse 7s ease-in-out infinite;
+}
+
+.ring-b {
+  animation: ringPulse 8s ease-in-out infinite reverse;
+}
+
+@keyframes panelFloat {
+  0%, 100% {
+    transform: translateY(0);
+  }
+  50% {
+    transform: translateY(-12px);
+  }
+}
+
+@keyframes chipOneFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(5deg);
+  }
+  50% {
+    transform: translateY(-12px) rotate(8deg);
+  }
+}
+
+@keyframes chipTwoFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(-6deg);
+  }
+  50% {
+    transform: translateY(10px) rotate(-3deg);
+  }
+}
+
+@keyframes chipThreeFloat {
+  0%, 100% {
+    transform: translateY(0) rotate(4deg);
+  }
+  50% {
+    transform: translateY(-10px) rotate(7deg);
+  }
+}
+
+@keyframes ringPulse {
+  0%, 100% {
+    transform: scale(1);
+    opacity: 0.45;
+  }
+  50% {
+    transform: scale(1.08);
+    opacity: 0.8;
+  }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-panel,
+  .chip-one,
+  .chip-two,
+  .chip-three,
+  .ring-a,
+  .ring-b {
+    animation: none;
+  }
+}
