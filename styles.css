@@ -285,5 +285,13 @@ p { color: var(--muted); line-height: 1.7; }
   grid-column: 2;
 }
 
+.chip-two {
+  left: 14px;
+  bottom: 18px;
+}
+
+.floating-chip {
+  font-size: 0.65rem;
+  padding: 10px 14px;
 }
 }
