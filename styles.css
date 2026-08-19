@@ -257,4 +257,33 @@ p { color: var(--muted); line-height: 1.7; }
   font-size: 2.3rem;
   line-height: 1;
 }
+  .section-head h2 {
+  font-size: 2.3rem;
+  line-height: 1;
+}
+
+.team-card {
+  display: grid;
+  grid-template-columns: 95px 1fr;
+  column-gap: 18px;
+  align-items: center;
+  padding: 18px;
+}
+
+.team-card .avatar {
+  grid-column: 1;
+  grid-row: 1 / span 3;
+  width: 95px;
+  height: 95px;
+  margin: 0;
+  aspect-ratio: 1;
+  border-radius: 18px;
+  font-size: 2rem;
+}
+
+.team-card > *:not(.avatar) {
+  grid-column: 2;
+}
+
+}
 }
