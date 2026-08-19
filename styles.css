@@ -232,7 +232,7 @@ p { color: var(--muted); line-height: 1.7; }
   border-radius: 24px;
 }
 
-.team-card .avatar {
+.team-card .portrait  {
   aspect-ratio: auto;
   height: 190px;
   font-size: 3rem;
@@ -270,7 +270,7 @@ p { color: var(--muted); line-height: 1.7; }
   padding: 18px;
 }
 
-.team-card .avatar {
+.team-card .portrait  {
   grid-column: 1;
   grid-row: 1 / span 3;
   width: 95px;
@@ -281,7 +281,7 @@ p { color: var(--muted); line-height: 1.7; }
   font-size: 2rem;
 }
 
-.team-card > *:not(.avatar) {
+.team-card > *:not(.portrait ) {
   grid-column: 2;
 }
 
