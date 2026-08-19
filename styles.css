@@ -191,7 +191,7 @@ p { color: var(--muted); line-height: 1.7; }
   .hero-art { min-height: 420px; }
   .hero-panel { inset: 45px 8px 25px 22px; padding: 26px; border-radius: 26px; }
   .panel-top img { width: 50px; height: 50px; }
-  .panel-message { left: 26px; bottom: 70px; }
+  .panel-message { left: 26px; bottom: 38px; }
   .panel-message h2 { font-size: 2.6rem; }
   .panel-footer { left: 26px; right: 26px; }
   .floating-chip { font-size: .7rem; padding: 11px 13px; }
