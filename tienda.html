@@ -8,16 +8,63 @@
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
   <style>
-    .shop-page-hero h1{max-width:760px}.shop-showcase-section{background:#17090b;color:#fff}.shop-feature{display:grid;grid-template-columns:1.02fr .98fr;gap:52px;align-items:center}.shop-gallery{display:grid;grid-template-columns:1.25fr .75fr;grid-template-rows:210px 210px;gap:16px}.shop-shot{overflow:hidden;border-radius:24px;border:1px solid rgba(255,255,255,.1);background:#0f0b0c;box-shadow:0 22px 60px rgba(0,0,0,.24)}.shop-shot-main{grid-row:1/3}.shop-shot img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}.shop-shot:hover img{transform:scale(1.025)}.shop-copy-block h2{margin:10px 0 16px;font-family:"Space Grotesk","Inter",sans-serif;font-size:clamp(2.8rem,5vw,5rem);line-height:.95;letter-spacing:-.055em}.shop-copy-block p{margin:0 0 22px;color:#d8c8cb;max-width:560px}.shop-points{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}.shop-points span{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14);color:#f7e7e9;font-size:.82rem;font-weight:700}.shop-catalog-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:34px}.shop-filter-bar{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:9px}.shop-filter{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font-weight:800;cursor:pointer;transition:.2s ease}.shop-filter:hover,.shop-filter.active{background:var(--red);color:#fff;border-color:var(--red)}.shop-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}.product-card{min-height:0;padding:0;overflow:hidden;border-radius:24px;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}.product-card:hover{transform:translateY(-7px);box-shadow:0 22px 48px rgba(70,11,17,.12);border-color:#d9b8bd}.product-media{position:relative;aspect-ratio:4/5;overflow:hidden;background:#17090b}.product-media img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .35s ease}.product-card:hover .product-media img{transform:scale(1.025)}.product-body{padding:22px;display:flex;flex-direction:column;min-height:225px}.product-body .btn{margin-top:auto;width:100%}@media(max-width:980px){.shop-feature{grid-template-columns:1fr}.shop-gallery{grid-template-rows:250px 250px}.shop-catalog-head{align-items:flex-start;flex-direction:column}.shop-filter-bar{justify-content:flex-start}.shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}@media(max-width:620px){.shop-gallery{grid-template-columns:1fr;grid-template-rows:300px 210px 210px}.shop-shot-main{grid-row:auto}.shop-grid{grid-template-columns:1fr}.shop-copy-block h2{font-size:3rem}}
+    .shop-page-hero h1{max-width:760px}
+    .shop-showcase-section{background:linear-gradient(135deg,#150708 0%,#260b0e 100%);color:#fff}
+    .shop-feature{display:grid;grid-template-columns:1.08fr .92fr;gap:48px;align-items:center}
+    .shop-visual-grid{display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:250px 250px;gap:16px}
+    .shop-mockup{overflow:hidden;border-radius:26px;border:1px solid rgba(255,255,255,.1);background:#241012;box-shadow:0 24px 60px rgba(0,0,0,.24)}
+    .shop-mockup-large{grid-row:1 / span 2}
+    .shop-mockup img{width:100%;height:100%;display:block;object-fit:cover}
+    .shop-copy-block h2{margin:10px 0 16px;font-family:"Space Grotesk","Inter",sans-serif;font-size:clamp(2.8rem,5vw,5rem);line-height:.95;letter-spacing:-.055em}
+    .shop-copy-block p{margin:0 0 22px;color:#d8c8cb;max-width:560px}
+    .shop-points{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
+    .shop-points span{padding:8px 12px;border-radius:999px;border:1px solid rgba(255,255,255,.14);color:#f7e7e9;font-size:.82rem;font-weight:700}
+    .shop-catalog-head{display:flex;align-items:end;justify-content:space-between;gap:28px;margin-bottom:34px}
+    .shop-filter-bar{display:flex;flex-wrap:wrap;justify-content:flex-end;gap:9px}
+    .shop-filter{min-height:44px;padding:0 18px;border-radius:999px;border:1px solid var(--line);background:#fff;color:var(--ink);font-weight:800;cursor:pointer;transition:.2s ease}
+    .shop-filter:hover,.shop-filter.active{background:var(--red);color:#fff;border-color:var(--red)}
+    .shop-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
+    .product-card{min-height:0;padding:0;overflow:hidden;border-radius:24px;background:#fff;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
+    .product-card:hover{transform:translateY(-7px);box-shadow:0 22px 48px rgba(70,11,17,.12);border-color:#d9b8bd}
+    .product-media{position:relative;aspect-ratio:4/5;overflow:hidden;background:#f6f1f2}
+    .product-media img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .35s ease}
+    .product-card:hover .product-media img{transform:scale(1.025)}
+    .product-body{padding:22px;display:flex;flex-direction:column;min-height:235px}
+    .product-body .btn{margin-top:auto;width:100%}
+    @media(max-width:1000px){.shop-feature{grid-template-columns:1fr}.shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
+    @media(max-width:720px){.shop-catalog-head{align-items:flex-start;flex-direction:column}.shop-filter-bar{justify-content:flex-start}.shop-visual-grid{grid-template-columns:1fr 1fr;grid-template-rows:250px 220px}.shop-mockup-large{grid-column:1 / span 2;grid-row:auto}}
+    @media(max-width:620px){.shop-grid{grid-template-columns:1fr}.shop-visual-grid{grid-template-columns:1fr;grid-template-rows:auto}.shop-mockup-large{grid-column:auto}.shop-mockup{height:280px}.shop-copy-block h2{font-size:3rem}}
   </style>
 </head>
 <body>
 <div class="utility-bar"><div class="container utility-inner"><span>IEEE UniAutónoma Student Branch</span><span>Universidad Autónoma del Caribe</span></div></div>
-<header class="site-header"><nav class="nav container" aria-label="Navegación principal"><a class="brand" href="index.html" aria-label="IEEE UAC, inicio"><img src="assets/logo-ieee-uac.jpg" alt="IEEE UniAutónoma Student Branch"></a><button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button><div class="nav-links" id="navLinks"><a class="nav-link" href="index.html">Inicio</a><div class="nav-item" data-dropdown><button class="drop-toggle" type="button" data-dropdown-toggle aria-expanded="false">Acerca de</button><div class="dropdown"><a href="acerca.html">Quiénes somos</a><a href="equipo.html">Junta directiva</a><a href="capitulos.html">Capítulos y grupos</a></div></div><a class="nav-link" href="eventos.html">Actividades</a><a class="nav-link active" href="tienda.html">Tienda</a><a class="nav-link" href="index.html#contacto">Contacto</a><a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdXmSGo4fOdbX_f8u_sT8z1jOL9tOOFEEHAWfqDB4O3CjXCfQ/viewform?usp=sharing&ouid=102598372204146127191" target="_blank" rel="noopener noreferrer">Únete a IEEE UAC</a></div></nav></header>
+<header class="site-header">
+  <nav class="nav container" aria-label="Navegación principal">
+    <a class="brand" href="index.html" aria-label="IEEE UAC, inicio"><img src="assets/logo-ieee-uac.jpg" alt="IEEE UniAutónoma Student Branch"></a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+    <div class="nav-links" id="navLinks">
+      <a class="nav-link" href="index.html">Inicio</a>
+      <div class="nav-item" data-dropdown><button class="drop-toggle" type="button" data-dropdown-toggle aria-expanded="false">Acerca de</button><div class="dropdown"><a href="acerca.html">Quiénes somos</a><a href="equipo.html">Junta directiva</a><a href="capitulos.html">Capítulos y grupos</a></div></div>
+      <a class="nav-link" href="eventos.html">Actividades</a><a class="nav-link active" href="tienda.html">Tienda</a><a class="nav-link" href="index.html#contacto">Contacto</a>
+      <a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdXmSGo4fOdbX_f8u_sT8z1jOL9tOOFEEHAWfqDB4O3CjXCfQ/viewform?usp=sharing&ouid=102598372204146127191" target="_blank" rel="noopener noreferrer">Únete a IEEE UAC</a>
+    </div>
+  </nav>
+</header>
 <main>
-<section class="page-hero shop-page-hero"><div class="container"><div class="breadcrumbs"><a href="index.html">Inicio</a> / Merch</div><span class="section-kicker">IEEE UAC</span><h1>Merch</h1><p>Prendas, papelería y accesorios con la identidad de IEEE UAC. Explora la colección y elige tus favoritos.</p></div></section>
-<section class="section shop-showcase-section"><div class="container shop-feature reveal"><div class="shop-gallery"><figure class="shop-shot shop-shot-main"><img src="assets/products/hoodie.jpg" alt="Hoodie IEEE UAC"></figure><figure class="shop-shot"><img src="assets/products/libreta.jpg" alt="Libreta IEEE UAC"></figure><figure class="shop-shot"><img src="assets/products/botella.jpg" alt="Botella IEEE UAC"></figure></div><div class="shop-copy-block"><span class="section-kicker">Colección IEEE UAC</span><h2>Identidad que llevas contigo</h2><p>Una selección de productos pensados para la vida universitaria, los encuentros y la comunidad de la rama.</p><div class="shop-points"><span>Ropa</span><span>Papelería</span><span>Accesorios</span></div><button class="btn btn-primary" type="button" id="generalShopWhatsApp">Consultar disponibilidad</button></div></div></section>
-<section class="section white"><div class="container"><div class="shop-catalog-head reveal"><div><span class="section-kicker">Colección</span><h2 class="section-title">Merch IEEE UAC</h2></div><div class="shop-filter-bar" id="shopFilters" aria-label="Filtrar productos"><button class="shop-filter active" type="button" data-filter="Todos">Todo</button><button class="shop-filter" type="button" data-filter="Ropa">Ropa</button><button class="shop-filter" type="button" data-filter="Papelería">Papelería</button><button class="shop-filter" type="button" data-filter="Accesorios">Accesorios</button></div></div><div class="shop-grid" id="shopGrid"></div></div></section>
+<section class="page-hero shop-page-hero"><div class="container"><div class="breadcrumbs"><a href="index.html">Inicio</a> / Merch</div><span class="section-kicker">IEEE UAC</span><h1>Merch</h1><p>Productos con la identidad de IEEE UAC para acompañar la vida universitaria, los eventos y la comunidad de la rama.</p></div></section>
+
+<section class="section shop-showcase-section">
+  <div class="container shop-feature reveal">
+    <div class="shop-visual-grid">
+      <figure class="shop-mockup shop-mockup-large"><img src="assets/products/mochila-ieee-uac.webp" alt="Mochila IEEE UAC"></figure>
+      <figure class="shop-mockup"><img src="assets/products/libreta-espiral.webp" alt="Libreta espiral IEEE UAC"></figure>
+      <figure class="shop-mockup"><img src="assets/products/botella-ieee-uac.webp" alt="Botella IEEE UAC"></figure>
+    </div>
+    <div class="shop-copy-block"><span class="section-kicker">Colección IEEE UAC</span><h2>Identidad que llevas contigo</h2><p>Una selección de piezas institucionales pensadas para el estudio, los encuentros y la representación de la rama.</p><div class="shop-points"><span>Papelería</span><span>Accesorios</span></div><button class="btn btn-primary" type="button" id="generalShopWhatsApp">Consultar disponibilidad</button></div>
+  </div>
+</section>
+
+<section class="section white"><div class="container"><div class="shop-catalog-head reveal"><div><span class="section-kicker">Colección</span><h2 class="section-title">Elige tu producto</h2></div><div class="shop-filter-bar" id="shopFilters" aria-label="Filtrar productos"><button class="shop-filter active" type="button" data-filter="Todos">Todo</button><button class="shop-filter" type="button" data-filter="Papelería">Papelería</button><button class="shop-filter" type="button" data-filter="Accesorios">Accesorios</button></div></div><div class="shop-grid" id="shopGrid"></div></div></section>
 </main>
 <footer class="site-footer"><div class="container footer-grid"><div><img class="footer-logo" src="assets/logo-ieee-uac.jpg" alt="IEEE UniAutónoma Student Branch"><p>Rama estudiantil IEEE de la Universidad Autónoma del Caribe. Tecnología, innovación, formación y comunidad.</p></div><div class="footer-links"><strong>Navegación</strong><a href="acerca.html">Acerca de</a><a href="equipo.html">Junta directiva</a><a href="capitulos.html">Capítulos y grupos</a><a href="eventos.html">Actividades</a><a href="tienda.html">Tienda</a></div><div class="footer-links"><strong>Canales oficiales</strong><a href="mailto:ieeeuniautonoma@gmail.com">ieeeuniautonoma@gmail.com</a><a href="https://www.instagram.com/ieee.uac/" target="_blank" rel="noopener noreferrer">@ieee.uac</a><a href="https://docs.google.com/forms/d/e/1FAIpQLSdXmSGo4fOdbX_f8u_sT8z1jOL9tOOFEEHAWfqDB4O3CjXCfQ/viewform?usp=sharing&ouid=102598372204146127191" target="_blank" rel="noopener noreferrer">Formulario de inscripción</a></div></div><div class="container footer-bottom">© <span id="year"></span> IEEE UniAutónoma Student Branch</div></footer>
 <script src="data.js"></script><script src="script.js"></script>
