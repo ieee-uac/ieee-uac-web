@@ -3,8 +3,8 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width,initial-scale=1">
-  <meta name="description" content="Actividades y espacios de formación de IEEE UniAutónoma Student Branch.">
-  <title>Actividades | IEEE UAC</title>
+  <meta name="description" content="Merch y productos de IEEE UniAutónoma Student Branch.">
+  <title>Tienda | IEEE UAC</title>
   <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="stylesheet" href="styles.css">
 </head>
@@ -24,17 +24,60 @@
           <a href="capitulos.html">Capítulos y grupos</a>
         </div>
       </div>
-      <a class="nav-link active" href="eventos.html">Actividades</a>
-      <a class="nav-link " href="tienda.html">Tienda</a>
+      <a class="nav-link " href="eventos.html">Actividades</a>
+      <a class="nav-link active" href="tienda.html">Tienda</a>
       <a class="nav-link" href="index.html#contacto">Contacto</a>
       <a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdXmSGo4fOdbX_f8u_sT8z1jOL9tOOFEEHAWfqDB4O3CjXCfQ/viewform?usp=sharing&ouid=102598372204146127191" target="_blank" rel="noopener noreferrer">Únete a IEEE UAC</a>
     </div>
   </nav>
 </header>
 <main>
-<section class="page-hero"><div class="container"><div class="breadcrumbs"><a href="index.html">Inicio</a> / Actividades</div><span class="section-kicker">Actividades</span><h1>Formación y comunidad</h1><p>Las actividades de IEEE UAC buscan complementar la experiencia universitaria con espacios técnicos, colaborativos y de desarrollo profesional.</p></div></section>
-<section class="section white"><div class="container"><div class="activity-grid"><article class="activity-card reveal"><span class="section-kicker">Formación</span><h3>Talleres y espacios técnicos</h3><p>Sesiones orientadas a fortalecer conocimientos y habilidades en áreas de ingeniería, computación y tecnología.</p></article><article class="activity-card reveal"><span class="section-kicker">Comunidad</span><h3>Charlas y encuentros</h3><p>Espacios para compartir experiencias, conocer otras perspectivas y ampliar la red de estudiantes de la rama.</p></article><article class="activity-card reveal"><span class="section-kicker">Participación</span><h3>Retos e iniciativas</h3><p>Actividades que permiten aplicar conocimientos, proponer ideas y colaborar en proyectos impulsados desde la comunidad.</p></article></div></div></section>
-<section class="section"><div class="container split-panel"><article class="panel reveal"><span class="section-kicker">Agenda oficial</span><h2>Consulta las actividades vigentes</h2><p>Las fechas, inscripciones y novedades de cada actividad se comunican a través del Instagram oficial de IEEE UAC.</p><a class="btn btn-primary" href="https://www.instagram.com/ieee.uac/" target="_blank" rel="noopener noreferrer">Ver Instagram</a></article><article class="panel reveal"><span class="section-kicker">Participa</span><h2>Haz parte de la rama</h2><p>Registra tus intereses para recibir información sobre actividades y oportunidades de participación.</p><a class="btn btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSdXmSGo4fOdbX_f8u_sT8z1jOL9tOOFEEHAWfqDB4O3CjXCfQ/viewform?usp=sharing&ouid=102598372204146127191" target="_blank" rel="noopener noreferrer">Formulario de inscripción</a></article></div></section>
+<section class="page-hero shop-page-hero">
+  <div class="container">
+    <div class="breadcrumbs"><a href="index.html">Inicio</a> / Tienda</div>
+    <span class="section-kicker">Tienda IEEE UAC</span>
+    <h1>Merch IEEE UAC</h1>
+    <p>Prendas, papelería y accesorios con la identidad de la rama. Elige un producto y coordina tu compra directamente por WhatsApp.</p>
+  </div>
+</section>
+
+<section class="section shop-showcase-section">
+  <div class="container shop-feature reveal">
+    <div class="shop-visual">
+      <img src="assets/merch-coleccion.jpg" alt="Colección de productos IEEE UniAutónoma Student Branch">
+      <span class="shop-visual-badge">Colección IEEE UAC</span>
+    </div>
+    <div class="shop-copy-block">
+      <span class="section-kicker">Identidad de la rama</span>
+      <h2>Lleva IEEE UAC contigo</h2>
+      <p>La colección reúne piezas diseñadas para la vida universitaria, los eventos y la comunidad de la rama. Cada pedido se gestiona por WhatsApp para confirmar disponibilidad, detalles y entrega.</p>
+      <div class="shop-points">
+        <span>Ropa</span>
+        <span>Papelería</span>
+        <span>Accesorios</span>
+      </div>
+      <button class="btn btn-primary" type="button" id="generalShopWhatsApp">Comprar por WhatsApp</button>
+    </div>
+  </div>
+</section>
+
+<section class="section white">
+  <div class="container">
+    <div class="shop-catalog-head reveal">
+      <div>
+        <span class="section-kicker">Colección</span>
+        <h2 class="section-title">Elige tu producto</h2>
+      </div>
+      <div class="shop-filter-bar" id="shopFilters" aria-label="Filtrar productos">
+        <button class="shop-filter active" type="button" data-filter="Todos">Todo</button>
+        <button class="shop-filter" type="button" data-filter="Ropa">Ropa</button>
+        <button class="shop-filter" type="button" data-filter="Papelería">Papelería</button>
+        <button class="shop-filter" type="button" data-filter="Accesorios">Accesorios</button>
+      </div>
+    </div>
+    <div class="shop-grid" id="shopGrid"></div>
+  </div>
+</section>
 </main>
 <footer class="site-footer">
   <div class="container footer-grid">
