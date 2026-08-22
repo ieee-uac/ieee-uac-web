@@ -14,8 +14,12 @@ window.IEEE_UAC_DATA = {
     { initial: 'T', name: 'Tania Barraza', role: 'Webmaster', bio: 'Tania está a cargo del desarrollo, mantenimiento y evolución de la presencia web de IEEE UniAutónoma Student Branch. Su función incluye organizar el contenido digital, mantener actualizada la información de la rama y cuidar que la experiencia de navegación sea clara tanto en computador como en dispositivos móviles.' }
   ],
   merch: [
-    { name: 'Mochila IEEE UAC', category: 'Accesorios', description: 'Mochila institucional para el día a día universitario.', image: 'assets/products/mochila-ieee-uac.webp' },
-    { name: 'Libreta espiral IEEE UAC', category: 'Papelería', description: 'Libreta institucional para clases, proyectos y actividades.', image: 'assets/products/libreta-espiral.webp' },
-    { name: 'Botella IEEE UAC', category: 'Accesorios', description: 'Botella reutilizable institucional para universidad y eventos.', image: 'assets/products/botella-ieee-uac.webp' }
+    { name: 'Papelería corporativa IEEE UAC', category: 'Papelería', description: 'Folder y piezas institucionales para presentaciones, eventos y material de apoyo.', spritePosition: '0% 0%' },
+    { name: 'Lanyard y credencial IEEE UAC', category: 'Accesorios', description: 'Cinta institucional con credencial para miembros y actividades oficiales.', spritePosition: '100% 0%' },
+    { name: 'Set libreta y bolígrafo IEEE UAC', category: 'Papelería', description: 'Set institucional para estudio, reuniones y uso académico.', spritePosition: '0% 33.333%' },
+    { name: 'Libreta espiral IEEE UAC', category: 'Papelería', description: 'Libreta institucional práctica para clases, proyectos y actividades.', spritePosition: '100% 33.333%' },
+    { name: 'Vaso IEEE UAC', category: 'Accesorios', description: 'Vaso institucional con identidad visual de la rama.', spritePosition: '0% 66.666%' },
+    { name: 'Mochila IEEE UAC', category: 'Accesorios', description: 'Mochila institucional para el día a día universitario.', spritePosition: '100% 66.666%' },
+    { name: 'Botella IEEE UAC', category: 'Accesorios', description: 'Botella reutilizable institucional para universidad y eventos.', spritePosition: '0% 100%' }
   ]
 };

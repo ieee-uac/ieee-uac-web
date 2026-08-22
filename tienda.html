@@ -14,7 +14,7 @@
     .shop-visual-grid{display:grid;grid-template-columns:1.15fr .85fr;grid-template-rows:250px 250px;gap:16px}
     .shop-mockup{overflow:hidden;border-radius:26px;border:1px solid rgba(255,255,255,.1);background:#241012;box-shadow:0 24px 60px rgba(0,0,0,.24)}
     .shop-mockup-large{grid-row:1 / span 2}
-    .shop-mockup img{width:100%;height:100%;display:block;object-fit:cover}
+    .shop-sprite,.product-sprite{width:100%;height:100%;display:block;background-image:url('assets/products/merch-final-sprite.jpg');background-size:200% 400%;background-repeat:no-repeat;background-color:#111}
     .shop-copy-block h2{margin:10px 0 16px;font-family:"Space Grotesk","Inter",sans-serif;font-size:clamp(2.8rem,5vw,5rem);line-height:.95;letter-spacing:-.055em}
     .shop-copy-block p{margin:0 0 22px;color:#d8c8cb;max-width:560px}
     .shop-points{display:flex;flex-wrap:wrap;gap:9px;margin-bottom:26px}
@@ -26,9 +26,9 @@
     .shop-grid{grid-template-columns:repeat(3,minmax(0,1fr));gap:22px}
     .product-card{min-height:0;padding:0;overflow:hidden;border-radius:24px;background:#fff;transition:transform .28s ease,box-shadow .28s ease,border-color .28s ease}
     .product-card:hover{transform:translateY(-7px);box-shadow:0 22px 48px rgba(70,11,17,.12);border-color:#d9b8bd}
-    .product-media{position:relative;aspect-ratio:4/5;overflow:hidden;background:#f6f1f2}
-    .product-media img{width:100%;height:100%;display:block;object-fit:cover;transition:transform .35s ease}
-    .product-card:hover .product-media img{transform:scale(1.025)}
+    .product-media{position:relative;aspect-ratio:9/16;overflow:hidden;background:#f6f1f2}
+    .product-sprite{transition:transform .35s ease}
+    .product-card:hover .product-sprite{transform:scale(1.02)}
     .product-body{padding:22px;display:flex;flex-direction:column;min-height:235px}
     .product-body .btn{margin-top:auto;width:100%}
     @media(max-width:1000px){.shop-feature{grid-template-columns:1fr}.shop-grid{grid-template-columns:repeat(2,minmax(0,1fr))}}
@@ -56,9 +56,9 @@
 <section class="section shop-showcase-section">
   <div class="container shop-feature reveal">
     <div class="shop-visual-grid">
-      <figure class="shop-mockup shop-mockup-large"><img src="assets/products/mochila-ieee-uac.webp" alt="Mochila IEEE UAC"></figure>
-      <figure class="shop-mockup"><img src="assets/products/libreta-espiral.webp" alt="Libreta espiral IEEE UAC"></figure>
-      <figure class="shop-mockup"><img src="assets/products/botella-ieee-uac.webp" alt="Botella IEEE UAC"></figure>
+      <figure class="shop-mockup shop-mockup-large"><div class="shop-sprite" role="img" aria-label="Mochila IEEE UAC" style="background-position:100% 66.666%"></div></figure>
+      <figure class="shop-mockup"><div class="shop-sprite" role="img" aria-label="Libreta espiral IEEE UAC" style="background-position:100% 33.333%"></div></figure>
+      <figure class="shop-mockup"><div class="shop-sprite" role="img" aria-label="Botella IEEE UAC" style="background-position:0% 100%"></div></figure>
     </div>
     <div class="shop-copy-block"><span class="section-kicker">Colección IEEE UAC</span><h2>Identidad que llevas contigo</h2><p>Una selección de piezas institucionales pensadas para el estudio, los encuentros y la representación de la rama.</p><div class="shop-points"><span>Papelería</span><span>Accesorios</span></div><button class="btn btn-primary" type="button" id="generalShopWhatsApp">Consultar disponibilidad</button></div>
   </div>
