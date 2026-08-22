@@ -13,7 +13,7 @@
   }
 
   if (aboutItem && aboutToggle) {
-    aboutToggle.addEventListener('click', (event) => {
+    aboutToggle.addEventListener('click', event => {
       if (window.matchMedia('(max-width: 980px)').matches) {
         event.preventDefault();
         const open = aboutItem.classList.toggle('open');
@@ -24,8 +24,8 @@
 
   document.querySelectorAll('.nav-links a').forEach(link => {
     link.addEventListener('click', () => {
-      if (navLinks) navLinks.classList.remove('open');
-      if (menuBtn) menuBtn.setAttribute('aria-expanded', 'false');
+      navLinks?.classList.remove('open');
+      menuBtn?.setAttribute('aria-expanded', 'false');
     });
   });
 
@@ -53,11 +53,7 @@
     teamGrid.innerHTML = data.members.map((member, index) => `
       <button class="member-card reveal" type="button" data-member-index="${index}">
         <div class="member-avatar">${member.initial}</div>
-        <div>
-          <h2>${member.name}</h2>
-          <p>${member.role}</p>
-          <span class="more">Ver perfil →</span>
-        </div>
+        <div><h2>${member.name}</h2><p>${member.role}</p><span class="more">Ver perfil →</span></div>
       </button>
     `).join('');
 
@@ -76,8 +72,7 @@
   }
 
   if (dialog) {
-    const close = dialog.querySelector('[data-dialog-close]');
-    close?.addEventListener('click', () => dialog.close());
+    dialog.querySelector('[data-dialog-close]')?.addEventListener('click', () => dialog.close());
     dialog.addEventListener('click', event => {
       const rect = dialog.getBoundingClientRect();
       const outside = event.clientX < rect.left || event.clientX > rect.right || event.clientY < rect.top || event.clientY > rect.bottom;
@@ -91,9 +86,7 @@
 
   const openWhatsApp = message => {
     const number = (data.contact?.whatsappNumber || '').replace(/\D/g, '');
-    const url = number
-      ? `https://wa.me/${number}?text=${encodeURIComponent(message)}`
-      : `https://wa.me/?text=${encodeURIComponent(message)}`;
+    const url = number ? `https://wa.me/${number}?text=${encodeURIComponent(message)}` : `https://wa.me/?text=${encodeURIComponent(message)}`;
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
@@ -101,13 +94,15 @@
     shopGrid.innerHTML = data.merch.map(item => `
       <article class="product-card reveal" data-category="${item.category}">
         <div class="product-media">
-          <img src="${item.image}" alt="${item.name}" loading="lazy">
+          ${item.spritePosition
+            ? `<div class="product-sprite" role="img" aria-label="${item.name}" style="background-position:${item.spritePosition}"></div>`
+            : `<img src="${item.image}" alt="${item.name}" loading="lazy">`}
         </div>
         <div class="product-body">
           <span class="product-category">${item.category}</span>
           <h3>${item.name}</h3>
           <p>${item.description}</p>
-          <button class="btn btn-primary" type="button" data-product="${item.name}">Comprar por WhatsApp</button>
+          <button class="btn btn-primary" type="button" data-product="${item.name}">Consultar por WhatsApp</button>
         </div>
       </article>
     `).join('');
@@ -115,9 +110,9 @@
     shopGrid.querySelectorAll('[data-product]').forEach(button => {
       button.addEventListener('click', () => {
         const product = button.dataset.product;
-        openWhatsApp(`Hola, quiero comprar ${product} de IEEE UAC. ¿Me comparten disponibilidad, valor y opciones de entrega?`);
+        openWhatsApp(`Hola, quiero consultar disponibilidad y valor de ${product} de IEEE UAC.`);
       });
-      button.closest('.product-card').classList.add('visible');
+      button.closest('.product-card')?.classList.add('visible');
     });
   }
 
@@ -133,9 +128,7 @@
     });
   }
 
-  if (generalShopWhatsApp) {
-    generalShopWhatsApp.addEventListener('click', () => {
-      openWhatsApp('Hola, quiero conocer la colección de merch de IEEE UAC y las opciones disponibles para comprar.');
-    });
-  }
+  generalShopWhatsApp?.addEventListener('click', () => {
+    openWhatsApp('Hola, quiero consultar la disponibilidad del merch de IEEE UAC.');
+  });
 })();
