@@ -10,7 +10,7 @@
   <style>
     .agenda-wrap {
       position: relative;
-      padding: 90px 0 105px;
+      padding: 88px 0 100px;
       overflow: hidden;
       background:
         radial-gradient(circle at 12% 18%, rgba(156,20,33,.08), transparent 26%),
@@ -19,14 +19,14 @@
     }
 
     .agenda-intro {
-      max-width: 760px;
-      margin-bottom: 36px;
+      max-width: 720px;
+      margin-bottom: 34px;
     }
 
     .agenda-intro h2 {
-      margin: 10px 0 12px;
+      margin: 10px 0 10px;
       font-family: "Space Grotesk", "Inter", sans-serif;
-      font-size: clamp(2.55rem, 4.6vw, 4rem);
+      font-size: clamp(2.45rem, 4.4vw, 3.8rem);
       line-height: .98;
       letter-spacing: -.05em;
     }
@@ -34,8 +34,8 @@
     .agenda-intro p {
       margin: 0;
       color: var(--muted);
-      font-size: 1.04rem;
-      max-width: 670px;
+      font-size: 1rem;
+      max-width: 620px;
     }
 
     .agenda-book {
@@ -62,14 +62,14 @@
 
     .agenda-page {
       position: relative;
-      min-height: 500px;
-      padding: 46px 48px 42px;
+      min-height: 430px;
+      padding: 44px 48px 60px;
       overflow: hidden;
       background:
         repeating-linear-gradient(
           to bottom,
-          rgba(142, 91, 98, .10) 0,
-          rgba(142, 91, 98, .10) 1px,
+          rgba(142, 91, 98, .09) 0,
+          rgba(142, 91, 98, .09) 1px,
           transparent 1px,
           transparent 34px
         ),
@@ -91,18 +91,6 @@
       box-shadow: inset 18px 0 24px rgba(55, 24, 28, .06);
     }
 
-    .agenda-page::after {
-      content: "";
-      position: absolute;
-      top: 0;
-      bottom: 0;
-      width: 1px;
-      background: rgba(156,20,33,.08);
-    }
-
-    .agenda-page-left::after { right: 28px; }
-    .agenda-page-right::after { left: 28px; }
-
     .agenda-gutter {
       position: absolute;
       z-index: 4;
@@ -120,9 +108,9 @@
       display: inline-flex;
       align-items: center;
       gap: 8px;
-      margin-bottom: 18px;
+      margin-bottom: 16px;
       color: var(--red);
-      font-size: .74rem;
+      font-size: .73rem;
       font-weight: 800;
       letter-spacing: .14em;
       text-transform: uppercase;
@@ -136,9 +124,9 @@
     }
 
     .agenda-page h3 {
-      margin: 0 0 12px;
+      margin: 0 0 10px;
       font-family: "Space Grotesk", "Inter", sans-serif;
-      font-size: clamp(2rem, 3vw, 3rem);
+      font-size: clamp(2rem, 3vw, 2.8rem);
       line-height: 1;
       letter-spacing: -.045em;
     }
@@ -146,102 +134,138 @@
     .agenda-page > p {
       margin: 0;
       color: var(--muted);
-      max-width: 470px;
+      max-width: 430px;
     }
 
     .agenda-event-list {
       display: grid;
-      gap: 14px;
-      margin-top: 32px;
+      gap: 12px;
+      margin-top: 26px;
     }
 
     .agenda-event {
       display: grid;
-      grid-template-columns: 72px 1fr;
-      gap: 16px;
+      grid-template-columns: 68px 1fr;
+      gap: 14px;
       align-items: center;
-      padding: 16px 18px;
+      padding: 14px 16px;
       border: 1px solid #ead9dc;
-      border-radius: 16px;
-      background: rgba(255,255,255,.88);
+      border-radius: 15px;
+      background: rgba(255,255,255,.9);
       box-shadow: 0 8px 24px rgba(70,11,17,.05);
     }
 
     .agenda-event-date {
       display: grid;
       place-items: center;
-      min-height: 64px;
-      border-radius: 14px;
+      min-height: 60px;
+      border-radius: 13px;
       background: var(--red);
       color: #fff;
       text-align: center;
       font-family: "Space Grotesk", "Inter", sans-serif;
-      font-size: .8rem;
+      font-size: .77rem;
       font-weight: 800;
       line-height: 1.15;
     }
 
-    .agenda-event h4 {
-      margin: 0 0 4px;
-      font-size: 1rem;
-    }
-
-    .agenda-event p {
-      margin: 0;
-      color: var(--muted);
-      font-size: .88rem;
-    }
+    .agenda-event h4 { margin: 0 0 3px; font-size: .98rem; }
+    .agenda-event p { margin: 0; color: var(--muted); font-size: .86rem; }
 
     .agenda-empty {
-      margin-top: 34px;
-      padding: 28px;
+      display: grid;
+      place-items: center;
+      min-height: 170px;
+      margin-top: 30px;
+      padding: 24px;
       border: 1px dashed #d9b8bd;
       border-radius: 18px;
-      background: rgba(255,255,255,.72);
+      background: rgba(255,255,255,.7);
+      text-align: center;
+    }
+
+    .agenda-empty-mark {
+      display: grid;
+      place-items: center;
+      width: 54px;
+      height: 54px;
+      margin-bottom: 14px;
+      border-radius: 16px;
+      background: var(--soft);
+      color: var(--red);
+      font-family: "Space Grotesk", "Inter", sans-serif;
+      font-weight: 800;
+      font-size: 1.2rem;
     }
 
     .agenda-empty strong {
       display: block;
-      margin-bottom: 8px;
-      font-size: 1.05rem;
+      margin-bottom: 5px;
+      font-size: 1rem;
     }
 
     .agenda-empty p {
       margin: 0;
       color: var(--muted);
-      font-size: .94rem;
+      font-size: .9rem;
     }
 
-    .agenda-status {
-      margin-top: 34px;
-      padding: 24px;
-      border-left: 4px solid var(--red);
-      border-radius: 0 16px 16px 0;
-      background: rgba(156,20,33,.055);
+    .agenda-details {
+      display: grid;
+      gap: 12px;
+      margin-top: 30px;
     }
 
-    .agenda-status span {
-      display: block;
-      margin-bottom: 6px;
+    .agenda-detail {
+      display: grid;
+      grid-template-columns: 44px 1fr;
+      gap: 14px;
+      align-items: center;
+      padding: 14px 16px;
+      border-bottom: 1px solid rgba(156,20,33,.13);
+    }
+
+    .agenda-detail:last-child { border-bottom: 0; }
+
+    .agenda-detail-icon {
+      display: grid;
+      place-items: center;
+      width: 44px;
+      height: 44px;
+      border-radius: 13px;
+      background: var(--soft);
       color: var(--red);
-      font-size: .75rem;
+      font-size: 1.1rem;
       font-weight: 800;
-      letter-spacing: .12em;
-      text-transform: uppercase;
     }
 
-    .agenda-status p {
-      margin: 0;
-      color: #4f4649;
+    .agenda-detail strong {
+      display: block;
+      margin-bottom: 2px;
+      font-size: .95rem;
+    }
+
+    .agenda-detail span {
+      color: var(--muted);
+      font-size: .86rem;
+    }
+
+    .agenda-note {
+      margin-top: 24px;
+      padding: 14px 16px;
+      border-radius: 14px;
+      background: rgba(156,20,33,.055);
+      color: #5d5053;
+      font-size: .88rem;
     }
 
     .agenda-signature {
       position: absolute;
       right: 46px;
-      bottom: 34px;
+      bottom: 28px;
       color: #9f8c90;
       font-family: "Space Grotesk", "Inter", sans-serif;
-      font-size: .74rem;
+      font-size: .72rem;
       font-weight: 700;
       letter-spacing: .08em;
       text-transform: uppercase;
@@ -260,20 +284,19 @@
       .agenda-page-left,
       .agenda-page-right {
         min-height: auto;
-        padding: 34px 28px 72px;
+        padding: 34px 28px 68px;
         border-radius: 16px;
         transform: none;
         box-shadow: none;
       }
-      .agenda-page-left::after,
-      .agenda-page-right::after { display: none; }
-      .agenda-signature { right: 28px; bottom: 26px; }
+      .agenda-signature { right: 28px; bottom: 24px; }
     }
 
     @media (max-width: 520px) {
-      .agenda-event { grid-template-columns: 58px 1fr; padding: 13px; }
-      .agenda-event-date { min-height: 58px; font-size: .72rem; }
-      .agenda-empty, .agenda-status { padding: 20px; }
+      .agenda-event { grid-template-columns: 56px 1fr; padding: 12px; }
+      .agenda-event-date { min-height: 56px; font-size: .7rem; }
+      .agenda-empty { min-height: 150px; padding: 20px; }
+      .agenda-detail { padding: 12px 8px; }
     }
   </style>
 </head>
@@ -310,18 +333,20 @@
     <div class="agenda-intro reveal">
       <span class="section-kicker">Agenda IEEE UAC</span>
       <h2>Próximos encuentros</h2>
-      <p>Este espacio reúne las actividades programadas por la rama. Cuando se publique un nuevo evento, aquí podrás consultar su fecha, modalidad y detalles principales.</p>
+      <p>Cuando se programe una actividad, encontrarás aquí la información esencial para participar.</p>
     </div>
 
     <div class="agenda-book reveal">
       <div class="agenda-page agenda-page-left">
         <span class="agenda-kicker">Próximos eventos</span>
-        <h3>Agenda de actividades</h3>
-        <p>Consulta aquí los encuentros programados por IEEE UAC.</p>
+        <h3>Agenda</h3>
         <div class="agenda-event-list" id="agendaEventList"></div>
         <div class="agenda-empty" id="agendaEmptyState">
-          <strong>No hay eventos programados en este momento.</strong>
-          <p>La agenda se actualizará cuando se confirmen nuevas actividades.</p>
+          <div>
+            <div class="agenda-empty-mark">—</div>
+            <strong>Sin eventos por ahora</strong>
+            <p>Publicaremos aquí la próxima actividad.</p>
+          </div>
         </div>
         <span class="agenda-signature">IEEE UAC · 2026</span>
       </div>
@@ -329,13 +354,14 @@
       <div class="agenda-gutter" aria-hidden="true"></div>
 
       <div class="agenda-page agenda-page-right">
-        <span class="agenda-kicker">Estado actual</span>
-        <h3>Agenda abierta</h3>
-        <p>Las próximas actividades aparecerán aquí con la información necesaria para participar.</p>
-        <div class="agenda-status">
-          <span>Actualización</span>
-          <p>En este momento la agenda no tiene eventos publicados. Cuando se confirme una nueva actividad, esta página mostrará su fecha, modalidad y estado.</p>
+        <span class="agenda-kicker">Información del evento</span>
+        <h3>Todo en un solo lugar</h3>
+        <div class="agenda-details">
+          <div class="agenda-detail"><div class="agenda-detail-icon">01</div><div><strong>Fecha y hora</strong><span>Día y horario del encuentro.</span></div></div>
+          <div class="agenda-detail"><div class="agenda-detail-icon">02</div><div><strong>Modalidad</strong><span>Presencial, virtual o híbrida.</span></div></div>
+          <div class="agenda-detail"><div class="agenda-detail-icon">03</div><div><strong>Participación</strong><span>Acceso e inscripción cuando aplique.</span></div></div>
         </div>
+        <div class="agenda-note">Esta página se actualizará cada vez que se confirme una nueva actividad.</div>
         <span class="agenda-signature">Student Branch</span>
       </div>
     </div>
