@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import SectionHead from '../components/SectionHead.astro';
 import { site } from '../data/site.js';
 ---
 
@@ -7,7 +9,16 @@ import { site } from '../data/site.js';
   title="Capítulos y grupos | IEEE UAC"
   description="IEEE Computer Society en IEEE UniAutónoma Student Branch."
 >
-  <section class="page-hero"><div class="container"><div class="breadcrumbs"><a href="/">Inicio</a> / <a href="/acerca/">Acerca de</a> / Capítulos y grupos</div><span class="section-kicker">Capítulos y grupos</span><h1>IEEE Computer Society</h1><p>Un espacio para estudiantes interesados en computación, software y tecnologías digitales dentro de la comunidad IEEE UAC.</p></div></section>
+  <PageHero
+    breadcrumbs={[{ label: 'Inicio', href: '/' }, { label: 'Acerca de', href: '/acerca/' }, { label: 'Capítulos y grupos' }]}
+    kicker="Capítulos y grupos"
+    title="IEEE Computer Society"
+    text="Un espacio para estudiantes interesados en computación, software y tecnologías digitales dentro de la comunidad IEEE UAC."
+  />
   <section class="section white"><div class="container"><article class="chapter-card reveal"><div class="chapter-symbol">IEEE<br>CS</div><div><span class="section-kicker">Computer Society</span><h2>Computación y tecnologías digitales</h2><p>IEEE Computer Society reúne áreas relacionadas con software, sistemas, inteligencia artificial, datos, ciberseguridad y tecnologías de computación. Dentro de IEEE UAC, este capítulo permite orientar actividades técnicas y conectar a estudiantes con intereses comunes en estas disciplinas.</p><div class="tags"><span class="tag">Software</span><span class="tag">Inteligencia artificial</span><span class="tag">Datos</span><span class="tag">Ciberseguridad</span><span class="tag">Sistemas</span></div></div></article></div></section>
-  <section class="section"><div class="container"><div class="section-head reveal"><div><span class="section-kicker">Participación</span><h2 class="section-title">Acércate al capítulo</h2></div><div class="section-copy">Si tu interés académico está relacionado con computación o tecnologías digitales, indícalo en el formulario de inscripción para que la rama conozca tus áreas de interés.</div></div><a class="btn btn-primary" href={site.joinForm} target="_blank" rel="noopener noreferrer">Formulario de inscripción</a></div></section>
+  <section class="section"><div class="container"><SectionHead
+    kicker="Participación"
+    title="Acércate al capítulo"
+    copy="Si tu interés académico está relacionado con computación o tecnologías digitales, indícalo en el formulario de inscripción para que la rama conozca tus áreas de interés."
+  /><a class="btn btn-primary" href={site.joinForm} target="_blank" rel="noopener noreferrer">Formulario de inscripción</a></div></section>
 </BaseLayout>

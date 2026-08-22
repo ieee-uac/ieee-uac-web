@@ -1,5 +1,7 @@
 ---
 import BaseLayout from '../layouts/BaseLayout.astro';
+import SectionHead from '../components/SectionHead.astro';
+import InfoCard from '../components/InfoCard.astro';
 import { site } from '../data/site.js';
 ---
 
@@ -37,11 +39,15 @@ import { site } from '../data/site.js';
 
 <section class="section white" id="nosotros">
   <div class="container">
-    <div class="section-head reveal"><div><span class="section-kicker">IEEE UAC</span><h2 class="section-title">Una comunidad para aprender, colaborar y liderar</h2></div><div class="section-copy">IEEE UAC complementa la experiencia universitaria con formación técnica, trabajo colaborativo y oportunidades de participación dentro del ecosistema IEEE.</div></div>
+    <SectionHead
+      kicker="IEEE UAC"
+      title="Una comunidad para aprender, colaborar y liderar"
+      copy="IEEE UAC complementa la experiencia universitaria con formación técnica, trabajo colaborativo y oportunidades de participación dentro del ecosistema IEEE."
+    />
     <div class="info-grid">
-      <article class="info-card reveal"><h3>Formación</h3><p>Actividades orientadas al aprendizaje técnico, la actualización y el desarrollo de nuevas habilidades.</p></article>
-      <article class="info-card reveal"><h3>Comunidad</h3><p>Espacios para conocer otros estudiantes, intercambiar ideas y construir iniciativas en equipo.</p></article>
-      <article class="info-card reveal"><h3>Liderazgo</h3><p>Experiencias que permiten asumir responsabilidades, organizar proyectos y participar activamente en la rama.</p></article>
+      <InfoCard title="Formación" text="Actividades orientadas al aprendizaje técnico, la actualización y el desarrollo de nuevas habilidades." />
+      <InfoCard title="Comunidad" text="Espacios para conocer otros estudiantes, intercambiar ideas y construir iniciativas en equipo." />
+      <InfoCard title="Liderazgo" text="Experiencias que permiten asumir responsabilidades, organizar proyectos y participar activamente en la rama." />
     </div>
   </div>
 </section>
