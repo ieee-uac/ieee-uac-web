@@ -1,0 +1,62 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site.js';
+---
+
+<BaseLayout
+  title="IEEE UniAutónoma Student Branch"
+  description="Sitio oficial de IEEE UniAutónoma Student Branch de la Universidad Autónoma del Caribe."
+>
+<section class="hero hero-showcase">
+  <div class="container hero-showcase-grid">
+    <div class="hero-copy reveal">
+      <span class="eyebrow">IEEE · Universidad Autónoma del Caribe</span>
+      <h1>Ideas que conectan <span>Tecnología que transforma</span></h1>
+      <p>Una comunidad estudiantil para aprender, crear y convertir el interés por la tecnología en experiencias que sumen a tu formación.</p>
+      <div class="hero-actions">
+        <a class="btn btn-primary" href="/acerca/">Conocer la rama</a>
+        <a class="hero-text-link" href="/eventos/">Explorar actividades <span aria-hidden="true">→</span></a>
+      </div>
+    </div>
+
+    <div class="hero-stage reveal" aria-hidden="true">
+      <div class="hero-ring hero-ring-a"></div>
+      <div class="hero-ring hero-ring-b"></div>
+      <div class="hero-floating-card">
+        <img class="hero-card-logo" src="/assets/logo-white.png" alt="">
+        <span class="hero-card-kicker">Nueva etapa</span>
+        <h2>Tecnología<br>Innovación<br>Liderazgo</h2>
+        <p>Aprender · crear · conectar · crecer</p>
+      </div>
+      <span class="floating-chip chip-events">Eventos</span>
+      <span class="floating-chip chip-community">Comunidad</span>
+      <span class="floating-chip chip-projects">Proyectos</span>
+    </div>
+  </div>
+</section>
+
+<section class="section white" id="nosotros">
+  <div class="container">
+    <div class="section-head reveal"><div><span class="section-kicker">IEEE UAC</span><h2 class="section-title">Una comunidad para aprender, colaborar y liderar</h2></div><div class="section-copy">IEEE UAC complementa la experiencia universitaria con formación técnica, trabajo colaborativo y oportunidades de participación dentro del ecosistema IEEE.</div></div>
+    <div class="info-grid">
+      <article class="info-card reveal"><h3>Formación</h3><p>Actividades orientadas al aprendizaje técnico, la actualización y el desarrollo de nuevas habilidades.</p></article>
+      <article class="info-card reveal"><h3>Comunidad</h3><p>Espacios para conocer otros estudiantes, intercambiar ideas y construir iniciativas en equipo.</p></article>
+      <article class="info-card reveal"><h3>Liderazgo</h3><p>Experiencias que permiten asumir responsabilidades, organizar proyectos y participar activamente en la rama.</p></article>
+    </div>
+  </div>
+</section>
+
+<section class="section">
+  <div class="container split-panel">
+    <article class="panel red reveal"><span class="section-kicker" style="color:#ffd8dd">Haz parte</span><h2>Participa en IEEE UAC</h2><p>El formulario de inscripción reúne la información necesaria para conocer tus intereses y vincularte a las actividades de la rama.</p><a class="btn btn-secondary" href={site.joinForm} target="_blank" rel="noopener noreferrer">Abrir formulario</a></article>
+    <article class="panel reveal"><span class="section-kicker">Explora</span><h2>Conoce la organización</h2><p>Conoce la Junta Directiva, IEEE Computer Society y las iniciativas que construyen la identidad de la rama.</p><a class="btn btn-secondary" href="/acerca/">Acerca de IEEE UAC</a></article>
+  </div>
+</section>
+
+<section class="section white" id="contacto">
+  <div class="container contact-grid">
+    <div class="contact-card reveal"><span class="section-kicker">Contacto</span><h2>Conecta con IEEE UAC</h2><p>Para propuestas, alianzas, información institucional o consultas sobre la rama, utiliza nuestros canales oficiales.</p><div class="contact-list"><div class="contact-row"><span>Correo</span><a href={`mailto:${site.email}`}>{site.email}</a></div><div class="contact-row"><span>Instagram</span><a href={site.instagram} target="_blank" rel="noopener noreferrer">{site.instagramHandle} ↗</a></div></div></div>
+    <div class="contact-card reveal"><span class="section-kicker">Inscripción</span><h2>¿Quieres participar?</h2><p>Completa el formulario oficial para compartir tus datos e intereses con la rama estudiantil.</p><a class="btn btn-primary" href={site.joinForm} target="_blank" rel="noopener noreferrer">Ir al formulario</a></div>
+  </div>
+</section>
+</BaseLayout>

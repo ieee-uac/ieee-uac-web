@@ -1,0 +1,13 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { site } from '../data/site.js';
+---
+
+<BaseLayout
+  title="Actividades | IEEE UAC"
+  description="Actividades y espacios de formación de IEEE UniAutónoma Student Branch."
+>
+  <section class="page-hero"><div class="container"><div class="breadcrumbs"><a href="/">Inicio</a> / Actividades</div><span class="section-kicker">Actividades</span><h1>Formación y comunidad</h1><p>Las actividades de IEEE UAC buscan complementar la experiencia universitaria con espacios técnicos, colaborativos y de desarrollo profesional.</p></div></section>
+  <section class="section white"><div class="container"><div class="activity-grid"><article class="activity-card reveal"><span class="section-kicker">Formación</span><h3>Talleres y espacios técnicos</h3><p>Sesiones orientadas a fortalecer conocimientos y habilidades en áreas de ingeniería, computación y tecnología.</p></article><article class="activity-card reveal"><span class="section-kicker">Comunidad</span><h3>Charlas y encuentros</h3><p>Espacios para compartir experiencias, conocer otras perspectivas y ampliar la red de estudiantes de la rama.</p></article><article class="activity-card reveal"><span class="section-kicker">Participación</span><h3>Retos e iniciativas</h3><p>Actividades que permiten aplicar conocimientos, proponer ideas y colaborar en proyectos impulsados desde la comunidad.</p></article></div></div></section>
+  <section class="section"><div class="container split-panel"><article class="panel reveal"><span class="section-kicker">Agenda oficial</span><h2>Consulta las actividades vigentes</h2><p>Las fechas, inscripciones y novedades de cada actividad se comunican a través del Instagram oficial de IEEE UAC.</p><a class="btn btn-primary" href={site.instagram} target="_blank" rel="noopener noreferrer">Ver Instagram</a></article><article class="panel reveal"><span class="section-kicker">Participa</span><h2>Haz parte de la rama</h2><p>Registra tus intereses para recibir información sobre actividades y oportunidades de participación.</p><a class="btn btn-secondary" href={site.joinForm} target="_blank" rel="noopener noreferrer">Formulario de inscripción</a></article></div></section>
+</BaseLayout>

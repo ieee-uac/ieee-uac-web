@@ -1,0 +1,27 @@
+---
+import { site } from '../data/site.js';
+---
+
+<footer class="site-footer">
+  <div class="container footer-grid">
+    <div>
+      <img class="footer-logo" src="/assets/logo-ieee-uac.jpg" alt={site.name}>
+      <p>Rama estudiantil IEEE de la Universidad Autónoma del Caribe. Tecnología, innovación, formación y comunidad.</p>
+    </div>
+    <div class="footer-links">
+      <strong>Navegación</strong>
+      <a href="/acerca/">Acerca de</a>
+      <a href="/equipo/">Junta directiva</a>
+      <a href="/capitulos/">Capítulos y grupos</a>
+      <a href="/eventos/">Actividades</a>
+      <a href="/tienda/">Tienda</a>
+    </div>
+    <div class="footer-links">
+      <strong>Canales oficiales</strong>
+      <a href={`mailto:${site.email}`}>{site.email}</a>
+      <a href={site.instagram} target="_blank" rel="noopener noreferrer">{site.instagramHandle}</a>
+      <a href={site.joinForm} target="_blank" rel="noopener noreferrer">Formulario de inscripción</a>
+    </div>
+  </div>
+  <div class="container footer-bottom">© <span id="year"></span> {site.name}</div>
+</footer>
