@@ -13,11 +13,61 @@
   }
 
   if (aboutItem && aboutToggle) {
+    let aboutPinned = false;
+    let closeTimer;
+    const desktopQuery = window.matchMedia('(min-width: 981px)');
+
+    const setAboutOpen = open => {
+      aboutItem.classList.toggle('open', open);
+      aboutToggle.setAttribute('aria-expanded', String(open));
+    };
+
+    const cancelClose = () => {
+      if (closeTimer) {
+        clearTimeout(closeTimer);
+        closeTimer = undefined;
+      }
+    };
+
     aboutToggle.addEventListener('click', event => {
-      if (window.matchMedia('(max-width: 980px)').matches) {
-        event.preventDefault();
-        const open = aboutItem.classList.toggle('open');
-        aboutToggle.setAttribute('aria-expanded', String(open));
+      event.preventDefault();
+      event.stopPropagation();
+      cancelClose();
+
+      aboutPinned = !aboutPinned;
+      setAboutOpen(aboutPinned || (desktopQuery.matches && aboutItem.matches(':hover')));
+    });
+
+    aboutItem.addEventListener('mouseenter', () => {
+      if (!desktopQuery.matches) return;
+      cancelClose();
+      setAboutOpen(true);
+    });
+
+    aboutItem.addEventListener('mouseleave', () => {
+      if (!desktopQuery.matches || aboutPinned) return;
+      cancelClose();
+      closeTimer = setTimeout(() => {
+        if (!aboutItem.matches(':hover') && !aboutPinned) {
+          setAboutOpen(false);
+        }
+      }, 220);
+    });
+
+    document.addEventListener('click', event => {
+      if (!aboutItem.contains(event.target)) {
+        aboutPinned = false;
+        cancelClose();
+        setAboutOpen(false);
+      }
+    });
+
+    document.addEventListener('keydown', event => {
+      if (event.key === 'Escape') {
+        aboutPinned = false;
+        cancelClose();
+        setAboutOpen(false);
+        aboutToggle.focus();
       }
     });
   }
@@ -26,6 +76,8 @@
     link.addEventListener('click', () => {
       navLinks?.classList.remove('open');
       menuBtn?.setAttribute('aria-expanded', 'false');
+      aboutItem?.classList.remove('open');
+      aboutToggle?.setAttribute('aria-expanded', 'false');
     });
   });
 
