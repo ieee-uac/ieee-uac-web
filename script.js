@@ -135,6 +135,7 @@
   const shopGrid = document.getElementById('shopGrid');
   const shopFilters = document.getElementById('shopFilters');
   const generalShopWhatsApp = document.getElementById('generalShopWhatsApp');
+  const merchSprite = 'assets/products/merch-final-sprite.jpg';
 
   const openWhatsApp = message => {
     const number = (data.contact?.whatsappNumber || '').replace(/\D/g, '');
@@ -143,9 +144,14 @@
   };
 
   if (shopGrid && data.merch) {
-    shopGrid.innerHTML = data.merch.map(item => `
+    shopGrid.innerHTML = data.merch.map(item => {
+      const media = item.image
+        ? `<div class="product-media"><img src="${item.image}" alt="${item.name}" loading="lazy"></div>`
+        : `<div class="product-media" role="img" aria-label="${item.name}" style="background-image:url('${merchSprite}');background-size:200% 400%;background-position:${item.spritePosition || '0% 0%'};background-repeat:no-repeat;"></div>`;
+
+      return `
       <article class="product-card reveal" data-category="${item.category}">
-        <div class="product-media"><img src="${item.image}" alt="${item.name}" loading="lazy"></div>
+        ${media}
         <div class="product-body">
           <span class="product-category">${item.category}</span>
           <h3>${item.name}</h3>
@@ -153,7 +159,8 @@
           <button class="btn btn-primary" type="button" data-product="${item.name}">Consultar por WhatsApp</button>
         </div>
       </article>
-    `).join('');
+    `;
+    }).join('');
 
     shopGrid.querySelectorAll('[data-product]').forEach(button => {
       button.addEventListener('click', () => {
