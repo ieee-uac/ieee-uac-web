@@ -93,11 +93,7 @@
   if (shopGrid && data.merch) {
     shopGrid.innerHTML = data.merch.map(item => `
       <article class="product-card reveal" data-category="${item.category}">
-        <div class="product-media">
-          ${item.spritePosition
-            ? `<div class="product-sprite" role="img" aria-label="${item.name}" style="background-position:${item.spritePosition}"></div>`
-            : `<img src="${item.image}" alt="${item.name}" loading="lazy">`}
-        </div>
+        <div class="product-media"><img src="${item.image}" alt="${item.name}" loading="lazy"></div>
         <div class="product-body">
           <span class="product-category">${item.category}</span>
           <h3>${item.name}</h3>

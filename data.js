@@ -14,13 +14,13 @@ window.IEEE_UAC_DATA = {
     { initial: 'T', name: 'Tania Barraza', role: 'Webmaster', bio: 'Tania está a cargo del desarrollo, mantenimiento y evolución de la presencia web de IEEE UniAutónoma Student Branch. Su función incluye organizar el contenido digital, mantener actualizada la información de la rama y cuidar que la experiencia de navegación sea clara tanto en computador como en dispositivos móviles. Desde el rol de webmaster también apoya la identidad digital de IEEE UAC y la integración de sus canales oficiales, actividades, equipo y recursos en un mismo espacio.' }
   ],
   merch: [
-    { name: 'Hoodie IEEE UAC', category: 'Ropa', description: 'Hoodie institucional con identidad IEEE UniAutónoma.', spritePosition: '0% 0%' },
-    { name: 'Libreta IEEE UAC', category: 'Papelería', description: 'Libreta institucional para estudio, reuniones y proyectos.', spritePosition: '33.333% 0%' },
-    { name: 'Set libreta y bolígrafo', category: 'Papelería', description: 'Set institucional para notas, reuniones y trabajo académico.', spritePosition: '66.666% 0%' },
-    { name: 'Papelería IEEE UAC', category: 'Papelería', description: 'Papelería corporativa con la identidad visual de la rama.', spritePosition: '100% 0%' },
-    { name: 'Mochila IEEE UAC', category: 'Accesorios', description: 'Mochila institucional para el día a día universitario.', spritePosition: '0% 100%' },
-    { name: 'Botella IEEE UAC', category: 'Accesorios', description: 'Botella reutilizable con diseño de IEEE UAC.', spritePosition: '33.333% 100%' },
-    { name: 'Lanyard y portacarnet', category: 'Accesorios', description: 'Lanyard y portacarnet para eventos y representación de la rama.', spritePosition: '66.666% 100%' },
-    { name: 'Vaso IEEE UAC', category: 'Accesorios', description: 'Vaso institucional con la identidad de IEEE UniAutónoma.', spritePosition: '100% 100%' }
+    { name: 'Hoodie IEEE UAC', category: 'Ropa', description: 'Hoodie institucional con identidad IEEE UniAutónoma.', image: 'assets/products/hoodie.jpg' },
+    { name: 'Camiseta IEEE UAC', category: 'Ropa', description: 'Camiseta de la rama para actividades, encuentros y comunidad IEEE UAC.', image: 'assets/products/camiseta.jpg' },
+    { name: 'Libreta IEEE UAC', category: 'Papelería', description: 'Libreta institucional para estudio, reuniones y proyectos.', image: 'assets/products/libreta.jpg' },
+    { name: 'Lapicero IEEE UAC', category: 'Papelería', description: 'Lapicero con identidad visual de IEEE UniAutónoma Student Branch.', image: 'assets/products/lapicero.jpg' },
+    { name: 'Mochila IEEE UAC', category: 'Accesorios', description: 'Mochila institucional para el día a día universitario.', image: 'assets/products/mochila.jpg' },
+    { name: 'Botella IEEE UAC', category: 'Accesorios', description: 'Botella reutilizable con diseño de IEEE UAC.', image: 'assets/products/botella.jpg' },
+    { name: 'Lanyard y portacarnet', category: 'Accesorios', description: 'Lanyard y portacarnet para eventos y representación de la rama.', image: 'assets/products/lanyard.jpg' },
+    { name: 'Vaso IEEE UAC', category: 'Accesorios', description: 'Vaso institucional con la identidad de IEEE UniAutónoma.', image: 'assets/products/vaso.jpg' }
   ]
 };
