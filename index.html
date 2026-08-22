@@ -1,58 +1,55 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="IEEE UniAutónoma Student Branch — tecnología, innovación, liderazgo y comunidad en la Universidad Autónoma del Caribe." />
-  <meta name="theme-color" content="#9c1421" />
-  <meta property="og:title" content="IEEE UniAutónoma Student Branch" />
-  <meta property="og:description" content="Ideas que conectan. Tecnología que transforma." />
-  <meta property="og:type" content="website" />
-  <meta property="og:image" content="assets/logo-header.jpg" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="IEEE UniAutónoma Student Branch: tecnología, innovación, liderazgo y comunidad en la Universidad Autónoma del Caribe.">
+  <meta name="theme-color" content="#9c1421">
+  <meta property="og:title" content="IEEE UniAutónoma Student Branch">
+  <meta property="og:description" content="Ideas que conectan. Tecnología que transforma.">
+  <meta property="og:image" content="https://merche311146-collab.github.io/ieee-uac-web/assets/logo-header.jpg">
+  <meta property="og:type" content="website">
   <title>IEEE UAC | Inicio</title>
-  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="topline"></div>
-  <header class="site-header" id="inicio">
+  <div class="site-nav-wrap">
     <nav class="nav container" aria-label="Navegación principal">
-      <a href="index.html" class="brand" aria-label="IEEE UAC - Inicio">
-        <img src="assets/logo-header.jpg" alt="IEEE UniAutónoma Student Branch" class="brand-logo" />
-      </a>
+      <a href="index.html" class="brand" aria-label="IEEE UAC - Inicio"><img class="brand-logo" src="assets/logo-header.jpg" alt="IEEE UniAutónoma Student Branch"></a>
       <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
       <div class="nav-links" id="navLinks">
         <a href="index.html" aria-current="page">Inicio</a>
-        <a href="index.html#nosotros">Nosotros</a>
+        <a href="#nosotros">Nosotros</a>
         <a href="capitulos.html">Capítulos y grupos</a>
         <a href="eventos.html">Eventos</a>
         <a href="equipo.html">Equipo</a>
-        <a href="index.html#contacto">Contacto</a>
+        <a href="#contacto">Contacto</a>
         <a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdXmSGo4fOdbX_f8u_sT8z1jOL9tOOFEEHAWfqDB4O3CjXCfQ/viewform?usp=sharing&ouid=102598372204146127191" target="_blank" rel="noopener noreferrer">Únete a IEEE UAC</a>
       </div>
     </nav>
+  </div>
 
+  <header class="home-hero">
     <section class="hero container">
       <div class="hero-copy reveal-on-scroll">
         <span class="eyebrow">IEEE · Universidad Autónoma del Caribe</span>
         <h1>Ideas que conectan<br><span>Tecnología que transforma</span></h1>
-        <p>IEEE UAC es una comunidad estudiantil que impulsa la innovación, el liderazgo, el aprendizaje y la creación de oportunidades para estudiantes de diferentes áreas.</p>
-        <div class="hero-actions">
-          <a href="#nosotros" class="btn btn-ghost">Conocer la rama</a>
-        </div>
+        <p>Una comunidad estudiantil para aprender, crear, liderar y convertir ideas en experiencias con impacto dentro y fuera del aula.</p>
+        <div class="btn-row"><a class="btn btn-secondary" href="#nosotros">Conocer la rama</a></div>
       </div>
 
       <div class="hero-art" aria-hidden="true">
-        <div class="ring ring-a"></div><div class="ring ring-b"></div>
         <div class="hero-panel">
-          <img src="assets/logo-white.png" alt="" class="panel-logo" />
+          <img class="panel-logo" src="assets/logo-white.png" alt="">
           <div class="panel-copy">
             <span class="mini-label">NUEVA ETAPA</span>
             <h2>Tecnología<br>Innovación<br>Liderazgo</h2>
-            <p>Una rama para aprender, crear, conectar y crecer</p>
+            <p>Un punto de encuentro para estudiantes que quieren aprender, proponer y construir juntos.</p>
           </div>
           <div class="panel-footer"><span>#IEEEUAC</span><span>2026</span></div>
         </div>
@@ -65,67 +62,48 @@
 
   <main>
     <section class="section" id="nosotros">
-      <div class="container intro-grid reveal-on-scroll">
+      <div class="container editorial-grid reveal-on-scroll">
         <div>
           <span class="section-kicker">Quiénes somos</span>
-          <h2>Una rama que reúne talento, curiosidad y ganas de hacer</h2>
+          <h2 class="section-title">Una rama para conectar curiosidad, conocimiento y acción</h2>
         </div>
-        <div class="intro-copy">
-          <p>IEEE UAC busca ser un punto de encuentro para estudiantes interesados en experiencias académicas, tecnológicas, profesionales y de liderazgo.</p>
-          <p>La rama está pensada para construir comunidad alrededor de la innovación y la tecnología dentro de la Universidad Autónoma del Caribe.</p>
+        <div class="editorial-copy">
+          <p>IEEE UAC reúne estudiantes interesados en tecnología, innovación, desarrollo profesional y liderazgo. La rama busca crear espacios donde aprender no sea solo recibir información, sino también colaborar, experimentar y asumir nuevos retos.</p>
+          <p>Desde la Universidad Autónoma del Caribe, construimos comunidad alrededor de experiencias académicas, proyectos, eventos y oportunidades que acerquen a los estudiantes al ecosistema IEEE.</p>
         </div>
       </div>
-      <div class="container pillars">
-        <article class="tilt-card"><span>01</span><h3>Aprender</h3><p>Talleres, charlas, mentorías y espacios prácticos.</p></article>
-        <article class="tilt-card"><span>02</span><h3>Conectar</h3><p>Redes entre estudiantes, docentes, egresados y aliados.</p></article>
-        <article class="tilt-card"><span>03</span><h3>Crear</h3><p>Proyectos, retos, ideas y experiencias colaborativas.</p></article>
-        <article class="tilt-card"><span>04</span><h3>Liderar</h3><p>Habilidades para coordinar, comunicar y generar impacto.</p></article>
-      </div>
-    </section>
 
-    <section class="section section-dark stats-section" aria-label="Datos de la rama">
-      <div class="container stats-grid reveal-on-scroll">
-        <article class="stat-card"><strong class="stat-number" data-count="5">0</strong><span>Integrantes de junta</span></article>
-        <article class="stat-card"><strong class="stat-number" data-count="1">0</strong><span>Capítulo confirmado</span></article>
-        <article class="stat-card"><strong class="stat-number" data-count="4">0</strong><span>Pilares de trabajo</span></article>
-      </div>
-    </section>
-
-    <section class="section gallery-section">
-      <div class="container section-head reveal-on-scroll">
-        <div><span class="section-kicker">Galería</span><h2>Momentos que iremos construyendo juntos</h2></div>
-        <p>Este espacio queda preparado para agregar fotografías de actividades, talleres, proyectos y encuentros a medida que la rama vaya generando contenido.</p>
-      </div>
-      <div class="container gallery-grid">
-        <div class="gallery-placeholder tilt-card"><span>01</span><strong>Actividades</strong></div>
-        <div class="gallery-placeholder tilt-card"><span>02</span><strong>Proyectos</strong></div>
-        <div class="gallery-placeholder tilt-card"><span>03</span><strong>Comunidad</strong></div>
+      <div class="container pillars" aria-label="Pilares de IEEE UAC">
+        <article class="pillar"><span class="pillar-index">01</span><h3>Aprender</h3><p>Talleres, charlas y espacios prácticos para fortalecer conocimientos y descubrir nuevas áreas.</p></article>
+        <article class="pillar"><span class="pillar-index">02</span><h3>Conectar</h3><p>Relaciones entre estudiantes, docentes, profesionales y comunidades con intereses compartidos.</p></article>
+        <article class="pillar"><span class="pillar-index">03</span><h3>Crear</h3><p>Ideas, proyectos y experiencias colaborativas que permitan pasar de la intención a la acción.</p></article>
+        <article class="pillar"><span class="pillar-index">04</span><h3>Liderar</h3><p>Oportunidades para comunicar, organizar, coordinar equipos y generar impacto en la comunidad.</p></article>
       </div>
     </section>
 
     <section class="section section-soft" id="unete">
-      <div class="container join-box reveal-on-scroll">
-        <div>
-          <span class="section-kicker">Haz parte</span>
-          <h2>Únete a una comunidad que quiere dejar huella</h2>
-          <p>Si quieres participar en actividades, proyectos, liderazgo y crecimiento profesional, completa el formulario oficial de inscripción.</p>
-        </div>
-        <div class="join-actions">
-          <a class="btn btn-light" href="https://docs.google.com/forms/d/e/1FAIpQLSdXmSGo4fOdbX_f8u_sT8z1jOL9tOOFEEHAWfqDB4O3CjXCfQ/viewform?usp=sharing&ouid=102598372204146127191" target="_blank" rel="noopener noreferrer">Quiero unirme</a>
+      <div class="container join-panel reveal-on-scroll">
+        <div class="join-layout">
+          <div>
+            <span class="section-kicker">Haz parte</span>
+            <h2>Tu próxima experiencia puede empezar aquí</h2>
+            <p>Si quieres participar en actividades, proyectos y espacios de crecimiento dentro de IEEE UAC, completa el formulario oficial de inscripción.</p>
+          </div>
+          <div class="btn-row"><a class="btn btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSdXmSGo4fOdbX_f8u_sT8z1jOL9tOOFEEHAWfqDB4O3CjXCfQ/viewform?usp=sharing&ouid=102598372204146127191" target="_blank" rel="noopener noreferrer">Quiero unirme ↗</a></div>
         </div>
       </div>
     </section>
 
     <section class="section" id="contacto">
-      <div class="container contact-simple reveal-on-scroll">
+      <div class="container contact-grid reveal-on-scroll">
         <div>
           <span class="section-kicker">Contacto</span>
-          <h2>Conecta con IEEE UAC</h2>
-          <p>¿Tienes una propuesta, quieres colaborar con la rama o necesitas más información? Escríbenos por nuestros canales oficiales.</p>
+          <h2 class="section-title">Hablemos</h2>
+          <p class="section-lead">¿Tienes una propuesta, quieres colaborar o necesitas información? Estos son nuestros canales oficiales.</p>
         </div>
-        <div class="contact-items">
-          <div class="contact-item"><span>Correo oficial</span><a href="mailto:ieeeuniautonoma@gmail.com">ieeeuniautonoma@gmail.com</a></div>
-          <div class="contact-item"><span>Instagram</span><a href="https://www.instagram.com/ieee.uac/" target="_blank" rel="noopener noreferrer">@ieee.uac ↗</a></div>
+        <div class="contact-actions">
+          <a class="contact-row" href="mailto:ieeeuniautonoma@gmail.com"><span>Correo</span><strong>ieeeuniautonoma@gmail.com</strong><b>↗</b></a>
+          <a class="contact-row" href="https://www.instagram.com/ieee.uac/" target="_blank" rel="noopener noreferrer"><span>Instagram</span><strong>@ieee.uac</strong><b>↗</b></a>
         </div>
       </div>
     </section>
@@ -133,7 +111,7 @@
 
   <footer class="footer">
     <div class="container footer-inner">
-      <div class="footer-brand"><img src="assets/logo-header.jpg" alt="IEEE UniAutónoma Student Branch" /></div>
+      <div class="footer-brand"><img src="assets/logo-header.jpg" alt="IEEE UniAutónoma Student Branch"></div>
       <small>© <span id="year"></span> IEEE UAC · Universidad Autónoma del Caribe</small>
     </div>
   </footer>

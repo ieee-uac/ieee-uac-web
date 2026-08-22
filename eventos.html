@@ -1,43 +1,81 @@
-<!DOCTYPE html>
+<!doctype html>
 <html lang="es">
 <head>
-  <meta charset="UTF-8" />
-  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-  <meta name="description" content="Eventos y convocatorias de IEEE UAC" />
-  <meta name="theme-color" content="#9c1421" />
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="description" content="Eventos, actividades y convocatorias de IEEE UniAutónoma Student Branch.">
+  <meta name="theme-color" content="#9c1421">
+  <meta property="og:title" content="Eventos | IEEE UAC">
+  <meta property="og:description" content="Actividades para aprender, conectar y crecer con IEEE UAC.">
+  <meta property="og:image" content="https://merche311146-collab.github.io/ieee-uac-web/assets/logo-header.jpg">
   <title>IEEE UAC | Eventos</title>
-  <link rel="icon" href="assets/favicon.png" type="image/png" />
+  <link rel="icon" href="assets/favicon.png" type="image/png">
   <link rel="preconnect" href="https://fonts.googleapis.com"><link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800&display=swap" rel="stylesheet">
-  <link rel="stylesheet" href="styles.css" />
+  <link href="https://fonts.googleapis.com/css2?family=Manrope:wght@400;500;600;700;800&family=Space+Grotesk:wght@500;600;700&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="styles.css">
 </head>
 <body>
   <div class="topline"></div>
-  <nav class="nav container" aria-label="Navegación principal">
-    <a href="index.html" class="brand"><img src="assets/logo-header.jpg" alt="IEEE UniAutónoma Student Branch" class="brand-logo" /></a>
-    <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
-    <div class="nav-links" id="navLinks">
-      <a href="index.html">Inicio</a>
-      <a href="index.html#nosotros">Nosotros</a><a href="capitulos.html">Capítulos y grupos</a><a href="eventos.html" aria-current="page">Eventos</a><a href="equipo.html">Equipo</a><a href="index.html#contacto">Contacto</a>
-      <a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdXmSGo4fOdbX_f8u_sT8z1jOL9tOOFEEHAWfqDB4O3CjXCfQ/viewform?usp=sharing&ouid=102598372204146127191" target="_blank" rel="noopener noreferrer">Únete a IEEE UAC</a>
-    </div>
-  </nav>
-
-  <header class="page-hero"><div class="container page-hero-inner reveal-on-scroll"><span class="section-kicker">Eventos y convocatorias</span><h1>Experiencias para aprender, conectar y crecer</h1><p>Aquí publicaremos actividades, encuentros, convocatorias y novedades oficiales de IEEE UAC.</p></div></header>
-
-  <main class="section">
-    <div class="container">
-      <div class="events-board">
-        <article class="event-card"><div class="event-number">01</div><div><span class="event-label">PRÓXIMAMENTE</span><h3>Experiencias IEEE UAC</h3><p>Talleres, charlas y espacios de aprendizaje para fortalecer habilidades técnicas, profesionales y de liderazgo.</p></div><span class="event-arrow">→</span></article>
-        <article class="event-card"><div class="event-number">02</div><div><span class="event-label">PRÓXIMAMENTE</span><h3>Encuentros IEEE UAC</h3><p>Espacios para conectar, compartir ideas y fortalecer la comunidad estudiantil de la rama.</p></div><span class="event-arrow">→</span></article>
-        <article class="event-card"><div class="event-number">03</div><div><span class="event-label">NOVEDADES</span><h3>Agenda IEEE UAC</h3><p>Las fechas, lugares y detalles de nuestras próximas actividades serán publicados aquí y en nuestros canales oficiales.</p></div><span class="event-arrow">→</span></article>
+  <div class="site-nav-wrap">
+    <nav class="nav container" aria-label="Navegación principal">
+      <a href="index.html" class="brand"><img class="brand-logo" src="assets/logo-header.jpg" alt="IEEE UniAutónoma Student Branch"></a>
+      <button class="menu-btn" id="menuBtn" aria-label="Abrir menú" aria-expanded="false"><span></span><span></span><span></span></button>
+      <div class="nav-links" id="navLinks">
+        <a href="index.html">Inicio</a><a href="index.html#nosotros">Nosotros</a><a href="capitulos.html">Capítulos y grupos</a><a href="eventos.html" aria-current="page">Eventos</a><a href="equipo.html">Equipo</a><a href="index.html#contacto">Contacto</a>
+        <a class="nav-cta" href="https://docs.google.com/forms/d/e/1FAIpQLSdXmSGo4fOdbX_f8u_sT8z1jOL9tOOFEEHAWfqDB4O3CjXCfQ/viewform?usp=sharing&ouid=102598372204146127191" target="_blank" rel="noopener noreferrer">Únete a IEEE UAC</a>
       </div>
+    </nav>
+  </div>
+
+  <header class="page-hero events-hero">
+    <div class="container page-hero-grid reveal-on-scroll">
+      <div>
+        <span class="section-kicker">Eventos y convocatorias</span>
+        <h1 class="page-title">Nos encontramos para aprender, crear y compartir</h1>
+        <p class="page-intro">La agenda de IEEE UAC reúne actividades técnicas, espacios de comunidad y oportunidades de desarrollo profesional.</p>
+      </div>
+      <aside class="agenda-card" aria-label="Estado de la agenda">
+        <span class="status-pill">Novedades oficiales</span>
+        <h2>La agenda se comunica con información confirmada</h2>
+        <p>Las actividades se anuncian cuando cuentan con fecha, lugar y detalles definidos. Sigue nuestros canales oficiales para conocer cada novedad en el momento en que esté lista.</p>
+        <div class="btn-row">
+          <a class="btn btn-secondary" href="https://www.instagram.com/ieee.uac/" target="_blank" rel="noopener noreferrer">Ver Instagram ↗</a>
+          <a class="btn btn-secondary" href="mailto:ieeeuniautonoma@gmail.com?subject=Propuesta%20de%20actividad%20para%20IEEE%20UAC">Proponer actividad</a>
+        </div>
+      </aside>
     </div>
+  </header>
+
+  <main>
+    <section class="section">
+      <div class="container reveal-on-scroll">
+        <span class="section-kicker">Qué encontrarás</span>
+        <h2 class="section-title">Experiencias con propósito, no eventos por llenar calendario</h2>
+        <p class="section-lead">Cada actividad busca aportar conocimiento, conexiones o herramientas útiles para la comunidad estudiantil.</p>
+      </div>
+      <div class="container event-types">
+        <article class="event-type"><span class="event-type-num">01 · Técnica</span><div><h3>Talleres y aprendizaje práctico</h3><p>Sesiones orientadas a tecnología, herramientas, tendencias y habilidades aplicadas.</p></div></article>
+        <article class="event-type"><span class="event-type-num">02 · Comunidad</span><div><h3>Encuentros para conectar</h3><p>Espacios para conocer personas, intercambiar ideas y fortalecer vínculos dentro de la rama.</p></div></article>
+        <article class="event-type"><span class="event-type-num">03 · Desarrollo</span><div><h3>Charlas y crecimiento profesional</h3><p>Conversaciones y experiencias que acerquen a los estudiantes a oportunidades, liderazgo y vida profesional.</p></div></article>
+      </div>
+
+      <div class="container events-cta reveal-on-scroll">
+        <div><h3>¿Quieres enterarte cuando publiquemos una actividad?</h3><p>Sigue el canal oficial de Instagram para recibir las novedades de IEEE UAC.</p></div>
+        <a class="btn btn-primary" href="https://www.instagram.com/ieee.uac/" target="_blank" rel="noopener noreferrer">Seguir @ieee.uac ↗</a>
+      </div>
+    </section>
+
+    <section class="section section-soft">
+      <div class="container join-panel reveal-on-scroll">
+        <div class="join-layout">
+          <div><span class="section-kicker">Participación</span><h2>También puedes vivir los eventos desde adentro</h2><p>Haz parte de la rama y participa en la construcción de nuevas actividades, proyectos y experiencias.</p></div>
+          <a class="btn btn-secondary" href="https://docs.google.com/forms/d/e/1FAIpQLSdXmSGo4fOdbX_f8u_sT8z1jOL9tOOFEEHAWfqDB4O3CjXCfQ/viewform?usp=sharing&ouid=102598372204146127191" target="_blank" rel="noopener noreferrer">Quiero unirme ↗</a>
+        </div>
+      </div>
+    </section>
   </main>
 
-  <section class="section section-soft"><div class="container join-box reveal-on-scroll"><div><span class="section-kicker">Mantente al día</span><h2>Conoce primero nuestras novedades</h2><p>Sigue la cuenta oficial de IEEE UAC para enterarte de actividades y anuncios.</p></div><div class="join-actions"><a class="btn btn-light" href="https://www.instagram.com/ieee.uac/" target="_blank" rel="noopener noreferrer">Ver Instagram ↗</a></div></div></section>
-
-  <footer class="footer"><div class="container footer-inner"><div class="footer-brand"><img src="assets/logo-header.jpg" alt="IEEE UniAutónoma Student Branch" /></div><small>© <span id="year"></span> IEEE UAC</small></div></footer>
+  <footer class="footer"><div class="container footer-inner"><div class="footer-brand"><img src="assets/logo-header.jpg" alt="IEEE UniAutónoma Student Branch"></div><small>© <span id="year"></span> IEEE UAC</small></div></footer>
   <script src="script.js"></script>
 </body>
 </html>

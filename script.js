@@ -5,114 +5,57 @@ const year = document.getElementById('year');
 if (year) year.textContent = new Date().getFullYear();
 
 if (menuBtn && navLinks) {
+  const closeMenu = () => {
+    navLinks.classList.remove('open');
+    menuBtn.setAttribute('aria-expanded', 'false');
+    document.body.classList.remove('menu-open');
+  };
+
   menuBtn.addEventListener('click', () => {
-    const isOpen = navLinks.classList.toggle('open');
-    menuBtn.setAttribute('aria-expanded', String(isOpen));
+    const open = navLinks.classList.toggle('open');
+    menuBtn.setAttribute('aria-expanded', String(open));
+    document.body.classList.toggle('menu-open', open);
   });
 
-  navLinks.querySelectorAll('a').forEach((link) => {
-    link.addEventListener('click', () => {
-      navLinks.classList.remove('open');
-      menuBtn.setAttribute('aria-expanded', 'false');
-    });
-  });
+  navLinks.querySelectorAll('a').forEach(link => link.addEventListener('click', closeMenu));
+  window.addEventListener('resize', () => { if (window.innerWidth > 860) closeMenu(); });
 }
 
-const revealElements = document.querySelectorAll(
-  '.reveal-on-scroll, .pillars article, .card, .event-card, .member-card, .gallery-placeholder, .stat-card'
-);
-
-revealElements.forEach((element) => element.classList.add('reveal'));
+const revealItems = document.querySelectorAll('.reveal-on-scroll, .pillar, .event-type, .chapter-feature, .growth-note, .member-card, .contact-row');
+revealItems.forEach(el => el.classList.add('reveal'));
 
 if ('IntersectionObserver' in window) {
-  const observer = new IntersectionObserver((entries) => {
-    entries.forEach((entry) => {
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
       if (entry.isIntersecting) {
         entry.target.classList.add('visible');
-        observer.unobserve(entry.target);
+        revealObserver.unobserve(entry.target);
       }
     });
   }, { threshold: 0.12 });
-
-  revealElements.forEach((element) => observer.observe(element));
+  revealItems.forEach(el => revealObserver.observe(el));
 } else {
-  revealElements.forEach((element) => element.classList.add('visible'));
+  revealItems.forEach(el => el.classList.add('visible'));
 }
 
-// Contadores visuales del inicio. Edita data-count en index.html para actualizar cifras.
-const counters = document.querySelectorAll('.stat-number[data-count]');
-if (counters.length) {
-  const animateCounter = (el) => {
-    const target = Number(el.dataset.count || 0);
-    const duration = 900;
-    const start = performance.now();
-    const step = (now) => {
-      const progress = Math.min((now - start) / duration, 1);
-      el.textContent = Math.round(target * (1 - Math.pow(1 - progress, 3)));
-      if (progress < 1) requestAnimationFrame(step);
-    };
-    requestAnimationFrame(step);
-  };
+const modal = document.getElementById('memberModal');
+if (modal) {
+  const closeBtn = document.getElementById('modalClose');
+  const avatar = document.getElementById('modalAvatar');
+  const name = document.getElementById('modalName');
+  const role = document.getElementById('modalRole');
+  const bio = document.getElementById('modalBio');
 
-  if ('IntersectionObserver' in window) {
-    const counterObserver = new IntersectionObserver((entries) => {
-      entries.forEach((entry) => {
-        if (entry.isIntersecting) {
-          animateCounter(entry.target);
-          counterObserver.unobserve(entry.target);
-        }
-      });
-    }, { threshold: 0.55 });
-    counters.forEach((counter) => counterObserver.observe(counter));
-  } else {
-    counters.forEach(animateCounter);
-  }
-}
-
-// Efecto 3D sutil en escritorio.
-const tiltCards = document.querySelectorAll('.tilt-card');
-const canTilt = window.matchMedia('(hover:hover) and (pointer:fine)').matches;
-if (canTilt) {
-  tiltCards.forEach((card) => {
-    card.addEventListener('pointermove', (event) => {
-      const rect = card.getBoundingClientRect();
-      const x = (event.clientX - rect.left) / rect.width - 0.5;
-      const y = (event.clientY - rect.top) / rect.height - 0.5;
-      card.style.setProperty('--rx', `${(-y * 5).toFixed(2)}deg`);
-      card.style.setProperty('--ry', `${(x * 7).toFixed(2)}deg`);
-    });
-    card.addEventListener('pointerleave', () => {
-      card.style.setProperty('--rx', '0deg');
-      card.style.setProperty('--ry', '0deg');
-    });
-  });
-}
-
-// Modal de perfiles del equipo.
-const memberModal = document.getElementById('memberModal');
-if (memberModal) {
-  const modalClose = document.getElementById('modalClose');
-  const modalAvatar = document.getElementById('modalAvatar');
-  const modalName = document.getElementById('modalName');
-  const modalRole = document.getElementById('modalRole');
-  const modalBio = document.getElementById('modalBio');
-
-  document.querySelectorAll('.member-card').forEach((card) => {
+  document.querySelectorAll('.member-card').forEach(card => {
     card.addEventListener('click', () => {
-      modalAvatar.textContent = card.dataset.avatar || '';
-      modalName.textContent = card.dataset.name || '';
-      modalRole.textContent = card.dataset.role || '';
-      const bio = card.querySelector('.member-bio');
-      modalBio.textContent = bio ? bio.textContent.trim() : '';
-      memberModal.showModal();
+      avatar.textContent = card.dataset.avatar || '';
+      name.textContent = card.dataset.name || '';
+      role.textContent = card.dataset.role || '';
+      bio.textContent = card.querySelector('.member-bio')?.textContent.trim() || '';
+      modal.showModal();
     });
   });
 
-  modalClose?.addEventListener('click', () => memberModal.close());
-  memberModal.addEventListener('click', (event) => {
-    if (event.target === memberModal) memberModal.close();
-  });
-  document.addEventListener('keydown', (event) => {
-    if (event.key === 'Escape' && memberModal.open) memberModal.close();
-  });
+  closeBtn?.addEventListener('click', () => modal.close());
+  modal.addEventListener('click', e => { if (e.target === modal) modal.close(); });
 }

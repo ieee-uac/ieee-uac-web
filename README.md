@@ -1,17 +1,23 @@
-# IEEE UAC — sitio web
+# IEEE UniAutónoma Student Branch — sitio web
 
-Versión premium en rojo para la Rama Estudiantil IEEE de la Universidad Autónoma del Caribe.
+Versión de producción para GitHub Pages.
 
-## Abrir en VS Code
-1. Descomprime la carpeta.
-2. Abre `ieee-uac-premium` en VS Code.
-3. Abre `index.html` con Live Server o directamente en el navegador.
+## Páginas
+- `index.html`: Inicio, Quiénes somos, Haz parte y Contacto.
+- `capitulos.html`: Capítulos y grupos; actualmente IEEE Computer Society.
+- `eventos.html`: Agenda, actividades y convocatorias.
+- `equipo.html`: Junta Directiva con perfiles interactivos.
 
-## Archivos
-- `index.html`: contenido y estructura.
-- `styles.css`: diseño responsive en rojo.
-- `script.js`: menú móvil y formulario de demostración.
-- `assets/logo-ieee-uac.png`: logo tomado de la referencia visual proporcionada.
+## Enlaces configurados
+- Formulario de inscripción: Google Forms.
+- Correo: ieeeuniautonoma@gmail.com
+- Instagram: @ieee.uac
 
-## Antes de publicar
-Reemplaza nombres de la junta, enlaces de inscripción, eventos y cualquier dato institucional que aún no esté confirmado.
+## Publicar en GitHub Pages
+Sube **el contenido** de esta carpeta a la raíz del repositorio. En GitHub Pages usa la rama `main` y la carpeta `/(root)`.
+
+## Actualizar eventos
+La página usa un estado de agenda vacío y profesional cuando no hay fechas confirmadas. Cuando exista un evento real, se puede añadir una tarjeta con fecha, lugar y enlace sin mostrar contenido ficticio.
+
+## Fotos del equipo
+Por ahora los perfiles usan iniciales como monogramas. Se pueden reemplazar después por fotos sin cambiar el resto de la estructura.
