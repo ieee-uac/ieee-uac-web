@@ -1,0 +1,31 @@
+---
+// Las categorías se derivan del catálogo, no se escriben a mano: así no pueden
+// desincronizarse con los productos reales.
+const { categories } = Astro.props;
+---
+
+<div class="shop-filter-bar" id="shopFilters" aria-label="Filtrar productos">
+  <button class="shop-filter active" type="button" data-filter="Todos">Todo</button>
+  {categories.map((category) => (
+    <button class="shop-filter" type="button" data-filter={category}>{category}</button>
+  ))}
+</div>
+
+<script>
+  const filters = document.getElementById('shopFilters');
+  const grid = document.getElementById('shopGrid');
+
+  if (filters && grid) {
+    filters.querySelectorAll('[data-filter]').forEach((button) => {
+      button.addEventListener('click', () => {
+        const filter = button.dataset.filter;
+        filters.querySelectorAll('[data-filter]').forEach((item) => {
+          item.classList.toggle('active', item === button);
+        });
+        grid.querySelectorAll('[data-category]').forEach((card) => {
+          card.hidden = filter !== 'Todos' && card.dataset.category !== filter;
+        });
+      });
+    });
+  }
+</script>

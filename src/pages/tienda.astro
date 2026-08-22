@@ -1,0 +1,79 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+import PageHero from '../components/PageHero.astro';
+import ProductCard from '../components/ProductCard.astro';
+import ShopFilters from '../components/ShopFilters.astro';
+import { merch } from '../data/merch.js';
+
+// Categorías únicas, en el orden en que aparecen en el catálogo.
+const categories = [...new Set(merch.map((product) => product.category))];
+---
+
+<BaseLayout
+  title="Tienda | IEEE UAC"
+  description="Merch y productos de IEEE UniAutónoma Student Branch."
+>
+  <PageHero
+    class="shop-page-hero"
+    breadcrumbs={[{ label: 'Inicio', href: '/' }, { label: 'Tienda' }]}
+    kicker="Tienda IEEE UAC"
+    title="Merch IEEE UAC"
+    text="Prendas, papelería y accesorios con la identidad de la rama. Elige un producto y coordina tu compra directamente por WhatsApp."
+  />
+
+  <section class="section shop-showcase-section">
+    <div class="container shop-feature reveal">
+      <div class="shop-visual">
+        <img src="/assets/merch-coleccion.jpg" alt="Colección de productos IEEE UniAutónoma Student Branch">
+        <span class="shop-visual-badge">Colección IEEE UAC</span>
+      </div>
+      <div class="shop-copy-block">
+        <span class="section-kicker">Identidad de la rama</span>
+        <h2>Lleva IEEE UAC contigo</h2>
+        <p>La colección reúne piezas diseñadas para la vida universitaria, los eventos y la comunidad de la rama. Cada pedido se gestiona por WhatsApp para confirmar disponibilidad, detalles y entrega.</p>
+        <div class="shop-points">
+          <span>Ropa</span>
+          <span>Papelería</span>
+          <span>Accesorios</span>
+        </div>
+        <button class="btn btn-primary" type="button" id="generalShopWhatsApp">Comprar por WhatsApp</button>
+      </div>
+    </div>
+  </section>
+
+  <section class="section white">
+    <div class="container">
+      <div class="shop-catalog-head reveal">
+        <div>
+          <span class="section-kicker">Colección</span>
+          <h2 class="section-title">Elige tu producto</h2>
+        </div>
+        <ShopFilters categories={categories} />
+      </div>
+      <div class="shop-grid" id="shopGrid">{merch.map((product) => <ProductCard product={product} />)}</div>
+    </div>
+  </section>
+</BaseLayout>
+
+<script>
+  // El mismo módulo de datos que usa el build; aquí se empaqueta para el navegador.
+  import { site } from '../data/site.js';
+
+  const openWhatsApp = (message) => {
+    const number = (site.whatsappNumber || '').replace(/\D/g, '');
+    const url = number
+      ? `https://wa.me/${number}?text=${encodeURIComponent(message)}`
+      : `https://wa.me/?text=${encodeURIComponent(message)}`;
+    window.open(url, '_blank', 'noopener,noreferrer');
+  };
+
+  document.querySelectorAll('[data-product]').forEach((button) => {
+    button.addEventListener('click', () => {
+      openWhatsApp(`Hola, quiero comprar ${button.dataset.product} de IEEE UAC. ¿Me comparten disponibilidad, valor y opciones de entrega?`);
+    });
+  });
+
+  document.getElementById('generalShopWhatsApp')?.addEventListener('click', () => {
+    openWhatsApp('Hola, quiero conocer la colección de merch de IEEE UAC y las opciones disponibles para comprar.');
+  });
+</script>

@@ -2,6 +2,15 @@
 import UtilityBar from '../components/UtilityBar.astro';
 import Header from '../components/Header.astro';
 import Footer from '../components/Footer.astro';
+// El orden de estos imports ES la cascada. No reordenar sin verificar:
+// responsive.css debe ir al final para conservar la prioridad de los breakpoints.
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/layout.css';
+import '../styles/components.css';
+import '../styles/home.css';
+import '../styles/shop.css';
+import '../styles/responsive.css';
 
 const { title, description } = Astro.props;
 ---
@@ -14,7 +23,6 @@ const { title, description } = Astro.props;
   <meta name="description" content={description}>
   <title>{title}</title>
   <link rel="icon" href="/assets/favicon.png" type="image/png">
-  <link rel="stylesheet" href="/styles.css">
 </head>
 <body>
   <UtilityBar />

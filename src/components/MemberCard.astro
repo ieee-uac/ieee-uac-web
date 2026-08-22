@@ -1,0 +1,23 @@
+---
+// Sin clase `reveal` a propósito: en el sitio original estas tarjetas se inyectaban
+// por JS y recibían `visible` de inmediato, así que nunca animaban. Añadir `reveal`
+// aquí las haría animar al entrar en pantalla, y eso sería un cambio de UX.
+const { member } = Astro.props;
+---
+
+<button
+  class="member-card"
+  type="button"
+  data-member
+  data-initial={member.initial}
+  data-name={member.name}
+  data-role={member.role}
+  data-bio={member.bio}
+>
+  <div class="member-avatar">{member.initial}</div>
+  <div>
+    <h2>{member.name}</h2>
+    <p>{member.role}</p>
+    <span class="more">Ver perfil →</span>
+  </div>
+</button>

@@ -1,0 +1,220 @@
+/* Portada: hero, tarjeta flotante, anillos y chips. */
+
+.hero {
+  position: relative;
+  overflow: hidden;
+  background: linear-gradient(135deg, #fff 0 55%, #f7eaec 100%);
+  border-bottom: 1px solid var(--line);
+}
+.hero-grid {
+  min-height: 610px;
+  display: grid;
+  grid-template-columns: 1.05fr .95fr;
+  align-items: center;
+  gap: 64px;
+  padding-block: 76px;
+}
+
+.hero h1 { font-size: clamp(3.6rem, 7vw, 6.5rem); max-width: 720px; }
+.hero p { max-width: 650px; font-size: 1.12rem; color: var(--muted); margin: 0 0 28px; }
+
+.hero-mark {
+  position: relative;
+  min-height: 430px;
+  border-radius: 34px;
+  background: linear-gradient(145deg, var(--red), var(--red-dark));
+  box-shadow: 0 35px 85px rgba(104,16,24,.24);
+  overflow: hidden;
+  display: grid;
+  place-items: center;
+}
+.hero-mark::before, .hero-mark::after {
+  content: '';
+  position: absolute;
+  border-radius: 50%;
+  border: 1px solid rgba(255,255,255,.18);
+}
+.hero-mark::before { width: 300px; height: 300px; right: -90px; top: -90px; }
+.hero-mark::after { width: 230px; height: 230px; left: -100px; bottom: -80px; }
+.hero-mark img { width: 220px; position: relative; z-index: 1; filter: drop-shadow(0 12px 30px rgba(0,0,0,.12)); }
+
+.hero-showcase {
+  background:
+    radial-gradient(circle at 76% 18%, rgba(156,20,33,.10), transparent 28%),
+    radial-gradient(circle at 12% 80%, rgba(156,20,33,.06), transparent 26%),
+    #fff;
+  border-bottom: 1px solid var(--line);
+}
+
+.hero-showcase-grid {
+  min-height: 690px;
+  display: grid;
+  grid-template-columns: 1.02fr .98fr;
+  gap: 70px;
+  align-items: center;
+  padding-block: 72px;
+}
+
+.hero-copy h1 {
+  margin: 16px 0 22px;
+  max-width: 720px;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: clamp(4rem, 6.7vw, 6.55rem);
+  line-height: .88;
+  letter-spacing: -.072em;
+}
+
+.hero-copy h1 span {
+  display: block;
+  color: var(--red);
+}
+
+.hero-copy p {
+  max-width: 630px;
+  margin: 0 0 30px;
+  color: var(--muted);
+  font-size: 1.08rem;
+  line-height: 1.75;
+}
+
+.hero-actions {
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 22px;
+}
+
+.hero-text-link {
+  color: var(--ink);
+  font-weight: 800;
+  text-decoration: none;
+  transition: color .2s ease, transform .2s ease;
+}
+
+.hero-text-link:hover {
+  color: var(--red);
+  transform: translateX(3px);
+}
+
+.hero-stage {
+  position: relative;
+  min-height: 560px;
+  display: grid;
+  place-items: center;
+}
+
+.hero-floating-card {
+  position: relative;
+  z-index: 2;
+  width: min(455px, 86%);
+  min-height: 520px;
+  padding: 42px 42px 38px;
+  border-radius: 40px;
+  overflow: hidden;
+  background:
+    linear-gradient(160deg, rgba(255,255,255,.07), transparent 34%),
+    linear-gradient(145deg, #a81425, #681018);
+  color: #fff;
+  box-shadow: 0 38px 95px rgba(104,16,24,.28);
+  animation: heroCardFloat 6s ease-in-out infinite;
+}
+
+.hero-floating-card::after {
+  content: '';
+  position: absolute;
+  inset: auto -90px -105px auto;
+  width: 270px;
+  height: 270px;
+  border: 1px solid rgba(255,255,255,.14);
+  border-radius: 50%;
+}
+
+.hero-card-logo {
+  width: 255px;
+  height: auto;
+  margin-bottom: 46px;
+}
+
+.hero-card-kicker {
+  display: inline-flex;
+  padding: 8px 12px;
+  border: 1px solid rgba(255,255,255,.28);
+  border-radius: 999px;
+  color: #ffdbe0;
+  font-size: .73rem;
+  font-weight: 800;
+  letter-spacing: .14em;
+  text-transform: uppercase;
+}
+
+.hero-floating-card h2 {
+  margin: 20px 0 20px;
+  font-family: 'Space Grotesk', 'Inter', sans-serif;
+  font-size: clamp(3.15rem, 4vw, 4.35rem);
+  line-height: .91;
+  letter-spacing: -.065em;
+}
+
+.hero-floating-card p {
+  margin: 0;
+  color: #f3dce0;
+  font-size: .96rem;
+  letter-spacing: .02em;
+}
+
+.hero-ring {
+  position: absolute;
+  z-index: 0;
+  border: 1px solid rgba(156,20,33,.16);
+  border-radius: 50%;
+  animation: ringDrift 8s ease-in-out infinite;
+}
+
+.hero-ring-a {
+  width: 330px;
+  height: 330px;
+  right: -36px;
+  top: 22px;
+}
+
+.hero-ring-b {
+  width: 220px;
+  height: 220px;
+  left: 4px;
+  bottom: 8px;
+  animation-delay: -3s;
+}
+
+.floating-chip {
+  position: absolute;
+  z-index: 4;
+  padding: 12px 18px;
+  border: 1px solid rgba(156,20,33,.16);
+  border-radius: 17px;
+  background: rgba(255,255,255,.94);
+  color: var(--red-dark);
+  box-shadow: 0 16px 42px rgba(70,11,17,.13);
+  font-weight: 800;
+  backdrop-filter: blur(8px);
+}
+
+.chip-events {
+  top: 25px;
+  right: 0;
+  transform: rotate(5deg);
+  animation: chipFloatA 4.8s ease-in-out infinite;
+}
+
+.chip-community {
+  left: 0;
+  bottom: 42px;
+  transform: rotate(-6deg);
+  animation: chipFloatB 5.4s ease-in-out infinite;
+}
+
+.chip-projects {
+  right: 18px;
+  bottom: 16px;
+  transform: rotate(4deg);
+  animation: chipFloatC 4.4s ease-in-out infinite;
+}

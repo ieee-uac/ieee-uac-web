@@ -1,0 +1,17 @@
+/* Variables de diseño: colores, sombras, radios y ancho de contenedor. */
+@import url('https://fonts.googleapis.com/css2?family=Barlow+Condensed:wght@600;700;800&family=Inter:wght@400;500;600;700&family=Space+Grotesk:wght@500;600;700&display=swap');
+
+:root {
+  --red: #9c1421;
+  --red-dark: #681018;
+  --red-deep: #460b11;
+  --cream: #fbf7f7;
+  --ink: #171315;
+  --muted: #6f676a;
+  --line: #e9d9dc;
+  --surface: #ffffff;
+  --soft: #f7ecee;
+  --shadow: 0 18px 50px rgba(70, 11, 17, .10);
+  --radius: 22px;
+  --container: 1180px;
+}
