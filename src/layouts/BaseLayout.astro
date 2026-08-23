@@ -1,0 +1,56 @@
+---
+import UtilityBar from '../components/UtilityBar.astro';
+import Header from '../components/Header.astro';
+import Footer from '../components/Footer.astro';
+import { url } from '../lib/url.js';
+// El orden de estos imports ES la cascada. No reordenar sin verificar:
+// responsive.css debe ir al final para conservar la prioridad de los breakpoints.
+import '../styles/tokens.css';
+import '../styles/base.css';
+import '../styles/layout.css';
+import '../styles/components.css';
+import '../styles/home.css';
+import '../styles/shop.css';
+import '../styles/responsive.css';
+
+const { title, description } = Astro.props;
+---
+
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width,initial-scale=1">
+  <meta name="description" content={description}>
+  <title>{title}</title>
+  <link rel="icon" href={url('/assets/favicon.png')} type="image/png">
+</head>
+<body>
+  <UtilityBar />
+  <Header />
+  <main>
+    <slot />
+  </main>
+  <Footer />
+
+  <script>
+    const reveals = document.querySelectorAll('.reveal');
+    if ('IntersectionObserver' in window) {
+      const observer = new IntersectionObserver((entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            entry.target.classList.add('visible');
+            observer.unobserve(entry.target);
+          }
+        });
+      }, { threshold: .12 });
+      reveals.forEach((el) => observer.observe(el));
+    } else {
+      reveals.forEach((el) => el.classList.add('visible'));
+    }
+
+    const year = document.getElementById('year');
+    if (year) year.textContent = String(new Date().getFullYear());
+  </script>
+</body>
+</html>

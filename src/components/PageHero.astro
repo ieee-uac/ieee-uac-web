@@ -1,0 +1,7 @@
+---
+import Breadcrumbs from './Breadcrumbs.astro';
+
+const { breadcrumbs, kicker, title, text, class: extraClass } = Astro.props;
+---
+
+<section class:list={['page-hero', extraClass]}><div class="container"><Breadcrumbs items={breadcrumbs} /><span class="section-kicker">{kicker}</span><h1>{title}</h1><p>{text}</p></div></section>

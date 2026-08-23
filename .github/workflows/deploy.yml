@@ -1,0 +1,40 @@
+name: Desplegar en GitHub Pages
+
+on:
+  push:
+    branches: [main] # Publica cuando algo llega a main.
+  pull_request: # En los PR solo compila: comprueba que el sitio sigue construyéndose.
+  workflow_dispatch: # Permite relanzarlo a mano desde la pestaña Actions.
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+# Serializa las ejecuciones de una misma rama. Al incluir la rama en el grupo,
+# la compilación de un PR no bloquea un despliegue de main.
+concurrency:
+  group: pages-${{ github.ref }}
+  cancel-in-progress: false
+
+jobs:
+  build:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v7
+      # Instala Node, ejecuta `npm ci` y `npm run build`, y sube dist/ como artefacto.
+      # La versión de Astro NO se fija aquí: sale de package-lock.json.
+      - uses: withastro/action@v6
+
+  deploy:
+    needs: build # Si el sitio no compila no se publica nada, y sigue en línea la versión anterior.
+    # Solo main llega a producción. Cubre a la vez los PR y los lanzamientos
+    # manuales hechos desde otra rama.
+    if: github.ref == 'refs/heads/main'
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - id: deployment
+        uses: actions/deploy-pages@v5

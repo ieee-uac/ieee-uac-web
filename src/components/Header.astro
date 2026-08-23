@@ -1,0 +1,67 @@
+---
+import { navLinks } from '../data/nav.js';
+import { site } from '../data/site.js';
+import { url } from '../lib/url.js';
+
+const normalize = (path) => (path !== '/' && path.endsWith('/') ? path.slice(0, -1) : path);
+const current = normalize(Astro.url.pathname);
+// Astro.url.pathname ya incluye la base, así que el href también tiene que incluirla.
+const isActive = (href) => normalize(url(href)) === current;
+---
+
+<header class="site-header">
+  <nav class="nav container" aria-label="Navegación principal">
+    <a class="brand" href={url('/')} aria-label="IEEE UAC, inicio">
+      <img src={url('/assets/logo-ieee-uac.jpg')} alt={site.name}>
+    </a>
+    <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false">
+      <span></span><span></span><span></span>
+    </button>
+    <div class="nav-links" id="navLinks">
+      {navLinks.map((item) => (
+        item.children ? (
+          <div class="nav-item" data-dropdown>
+            <button class="drop-toggle" type="button" data-dropdown-toggle aria-expanded="false">{item.label}</button>
+            <div class="dropdown">
+              {item.children.map((child) => <a href={url(child.href)}>{child.label}</a>)}
+            </div>
+          </div>
+        ) : (
+          <a class:list={['nav-link', isActive(item.href) && 'active']} href={url(item.href)}>{item.label}</a>
+        )
+      ))}
+      <a class="nav-cta" href={site.joinForm} target="_blank" rel="noopener noreferrer">Únete a IEEE UAC</a>
+    </div>
+  </nav>
+</header>
+
+<script>
+  const menuBtn = document.getElementById('menuBtn');
+  const navLinksEl = document.getElementById('navLinks');
+  const aboutItem = document.querySelector('[data-dropdown]');
+  const aboutToggle = document.querySelector('[data-dropdown-toggle]');
+
+  if (menuBtn && navLinksEl) {
+    menuBtn.addEventListener('click', () => {
+      const open = navLinksEl.classList.toggle('open');
+      menuBtn.setAttribute('aria-expanded', String(open));
+    });
+  }
+
+  if (aboutItem && aboutToggle) {
+    aboutToggle.addEventListener('click', (event) => {
+      if (window.matchMedia('(max-width: 980px)').matches) {
+        event.preventDefault();
+        const open = aboutItem.classList.toggle('open');
+        aboutToggle.setAttribute('aria-expanded', String(open));
+      }
+    });
+  }
+
+  document.querySelectorAll('.nav-links a').forEach((link) => {
+    link.addEventListener('click', () => {
+      navLinksEl?.classList.remove('open');
+      menuBtn?.setAttribute('aria-expanded', 'false');
+    });
+  });
+</script>
