@@ -1,4 +1,5 @@
 ---
+import { url } from '../lib/url.js';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import SectionHead from '../components/SectionHead.astro';
 import InfoCard from '../components/InfoCard.astro';
@@ -16,8 +17,8 @@ import { site } from '../data/site.js';
       <h1>Ideas que conectan <span>Tecnología que transforma</span></h1>
       <p>Una comunidad estudiantil para aprender, crear y convertir el interés por la tecnología en experiencias que sumen a tu formación.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href="/acerca/">Conocer la rama</a>
-        <a class="hero-text-link" href="/eventos/">Explorar actividades <span aria-hidden="true">→</span></a>
+        <a class="btn btn-primary" href={url('/acerca/')}>Conocer la rama</a>
+        <a class="hero-text-link" href={url('/eventos/')}>Explorar actividades <span aria-hidden="true">→</span></a>
       </div>
     </div>
 
@@ -25,7 +26,7 @@ import { site } from '../data/site.js';
       <div class="hero-ring hero-ring-a"></div>
       <div class="hero-ring hero-ring-b"></div>
       <div class="hero-floating-card">
-        <img class="hero-card-logo" src="/assets/logo-white.png" alt="">
+        <img class="hero-card-logo" src={url('/assets/logo-white.png')} alt="">
         <span class="hero-card-kicker">Nueva etapa</span>
         <h2>Tecnología<br>Innovación<br>Liderazgo</h2>
         <p>Aprender · crear · conectar · crecer</p>
@@ -55,7 +56,7 @@ import { site } from '../data/site.js';
 <section class="section">
   <div class="container split-panel">
     <article class="panel red reveal"><span class="section-kicker" style="color:#ffd8dd">Haz parte</span><h2>Participa en IEEE UAC</h2><p>El formulario de inscripción reúne la información necesaria para conocer tus intereses y vincularte a las actividades de la rama.</p><a class="btn btn-secondary" href={site.joinForm} target="_blank" rel="noopener noreferrer">Abrir formulario</a></article>
-    <article class="panel reveal"><span class="section-kicker">Explora</span><h2>Conoce la organización</h2><p>Conoce la Junta Directiva, IEEE Computer Society y las iniciativas que construyen la identidad de la rama.</p><a class="btn btn-secondary" href="/acerca/">Acerca de IEEE UAC</a></article>
+    <article class="panel reveal"><span class="section-kicker">Explora</span><h2>Conoce la organización</h2><p>Conoce la Junta Directiva, IEEE Computer Society y las iniciativas que construyen la identidad de la rama.</p><a class="btn btn-secondary" href={url('/acerca/')}>Acerca de IEEE UAC</a></article>
   </div>
 </section>
 

@@ -1,20 +1,21 @@
 ---
 import { site } from '../data/site.js';
+import { url } from '../lib/url.js';
 ---
 
 <footer class="site-footer">
   <div class="container footer-grid">
     <div>
-      <img class="footer-logo" src="/assets/logo-ieee-uac.jpg" alt={site.name}>
+      <img class="footer-logo" src={url('/assets/logo-ieee-uac.jpg')} alt={site.name}>
       <p>Rama estudiantil IEEE de la Universidad Autónoma del Caribe. Tecnología, innovación, formación y comunidad.</p>
     </div>
     <div class="footer-links">
       <strong>Navegación</strong>
-      <a href="/acerca/">Acerca de</a>
-      <a href="/equipo/">Junta directiva</a>
-      <a href="/capitulos/">Capítulos y grupos</a>
-      <a href="/eventos/">Actividades</a>
-      <a href="/tienda/">Tienda</a>
+      <a href={url('/acerca/')}>Acerca de</a>
+      <a href={url('/equipo/')}>Junta directiva</a>
+      <a href={url('/capitulos/')}>Capítulos y grupos</a>
+      <a href={url('/eventos/')}>Actividades</a>
+      <a href={url('/tienda/')}>Tienda</a>
     </div>
     <div class="footer-links">
       <strong>Canales oficiales</strong>

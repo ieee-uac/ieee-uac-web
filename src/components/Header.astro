@@ -1,16 +1,18 @@
 ---
 import { navLinks } from '../data/nav.js';
 import { site } from '../data/site.js';
+import { url } from '../lib/url.js';
 
 const normalize = (path) => (path !== '/' && path.endsWith('/') ? path.slice(0, -1) : path);
 const current = normalize(Astro.url.pathname);
-const isActive = (href) => normalize(href) === current;
+// Astro.url.pathname ya incluye la base, así que el href también tiene que incluirla.
+const isActive = (href) => normalize(url(href)) === current;
 ---
 
 <header class="site-header">
   <nav class="nav container" aria-label="Navegación principal">
-    <a class="brand" href="/" aria-label="IEEE UAC, inicio">
-      <img src="/assets/logo-ieee-uac.jpg" alt={site.name}>
+    <a class="brand" href={url('/')} aria-label="IEEE UAC, inicio">
+      <img src={url('/assets/logo-ieee-uac.jpg')} alt={site.name}>
     </a>
     <button class="menu-btn" id="menuBtn" type="button" aria-label="Abrir menú" aria-expanded="false">
       <span></span><span></span><span></span>
@@ -21,11 +23,11 @@ const isActive = (href) => normalize(href) === current;
           <div class="nav-item" data-dropdown>
             <button class="drop-toggle" type="button" data-dropdown-toggle aria-expanded="false">{item.label}</button>
             <div class="dropdown">
-              {item.children.map((child) => <a href={child.href}>{child.label}</a>)}
+              {item.children.map((child) => <a href={url(child.href)}>{child.label}</a>)}
             </div>
           </div>
         ) : (
-          <a class:list={['nav-link', isActive(item.href) && 'active']} href={item.href}>{item.label}</a>
+          <a class:list={['nav-link', isActive(item.href) && 'active']} href={url(item.href)}>{item.label}</a>
         )
       ))}
       <a class="nav-cta" href={site.joinForm} target="_blank" rel="noopener noreferrer">Únete a IEEE UAC</a>

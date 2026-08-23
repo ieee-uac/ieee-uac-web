@@ -1,11 +1,13 @@
 ---
 // Igual que MemberCard: sin `reveal`, porque en el original tampoco animaban.
+import { url } from '../lib/url.js';
+
 const { product } = Astro.props;
 ---
 
 <article class="product-card" data-category={product.category}>
   <div class="product-media">
-    <img src={product.image} alt={product.name} loading="lazy">
+    <img src={url(product.image)} alt={product.name} loading="lazy">
   </div>
   <div class="product-body">
     <span class="product-category">{product.category}</span>

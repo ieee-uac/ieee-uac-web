@@ -1,7 +1,9 @@
 ---
+import { url } from '../lib/url.js';
+
 const { items } = Astro.props;
 ---
 
 <div class="breadcrumbs">{items.map((item, index) => (
-  <Fragment>{index > 0 && ' / '}{item.href ? <a href={item.href}>{item.label}</a> : item.label}</Fragment>
+  <Fragment>{index > 0 && ' / '}{item.href ? <a href={url(item.href)}>{item.label}</a> : item.label}</Fragment>
 ))}</div>

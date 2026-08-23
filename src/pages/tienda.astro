@@ -1,4 +1,5 @@
 ---
+import { url } from '../lib/url.js';
 import BaseLayout from '../layouts/BaseLayout.astro';
 import PageHero from '../components/PageHero.astro';
 import ProductCard from '../components/ProductCard.astro';
@@ -24,7 +25,7 @@ const categories = [...new Set(merch.map((product) => product.category))];
   <section class="section shop-showcase-section">
     <div class="container shop-feature reveal">
       <div class="shop-visual">
-        <img src="/assets/merch-coleccion.jpg" alt="Colección de productos IEEE UniAutónoma Student Branch">
+        <img src={url('/assets/merch-coleccion.jpg')} alt="Colección de productos IEEE UniAutónoma Student Branch">
         <span class="shop-visual-badge">Colección IEEE UAC</span>
       </div>
       <div class="shop-copy-block">
