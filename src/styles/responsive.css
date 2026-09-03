@@ -77,7 +77,12 @@
   .member-card { min-height: auto; display: grid; grid-template-columns: 92px 1fr; gap: 18px; align-items: center; }
   .member-avatar { width: 92px; height: 105px; margin: 0; font-size: 2.7rem; }
   .footer-grid { grid-template-columns: 1fr; }
-  .footer-logo { width: 205px; height: 58px; }
+  .footer-brand {
+    min-height: 72px;
+    padding: 10px 40px 10px 18px;
+    clip-path: polygon(0 0, 100% 0, calc(100% - 28px) 100%, 0 100%);
+  }
+  .footer-logo { width: 200px; height: 50px; }
   .contact-row { flex-direction: column; gap: 4px; }
 }
 
