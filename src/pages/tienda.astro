@@ -17,21 +17,21 @@ const categories = [...new Set(merch.map((product) => product.category))];
   <PageHero
     class="shop-page-hero"
     breadcrumbs={[{ label: 'Inicio', href: '/' }, { label: 'Tienda' }]}
-    kicker="Tienda IEEE UAC"
-    title="Merch IEEE UAC"
-    text="Prendas, papelería y accesorios con la identidad de la rama. Elige un producto y coordina tu compra directamente por WhatsApp."
+    kicker="Tienda"
+    title="La colección de IEEE UAC"
+    text="Prendas, papelería y accesorios pensados para acompañar la vida universitaria y los eventos de la rama. Cada compra se coordina directamente por WhatsApp."
   />
 
   <section class="section shop-showcase-section">
     <div class="container shop-feature reveal">
       <div class="shop-visual">
         <img src={url('/assets/merch-coleccion.jpg')} alt="Colección de productos IEEE UniAutónoma Student Branch">
-        <span class="shop-visual-badge">Colección IEEE UAC</span>
+        <span class="shop-visual-badge">Colección UAC</span>
       </div>
       <div class="shop-copy-block">
-        <span class="section-kicker">Identidad de la rama</span>
-        <h2>Lleva IEEE UAC contigo</h2>
-        <p>La colección reúne piezas diseñadas para la vida universitaria, los eventos y la comunidad de la rama. Cada pedido se gestiona por WhatsApp para confirmar disponibilidad, detalles y entrega.</p>
+        <span class="section-kicker">Diseño institucional</span>
+        <h2>Lleva la rama contigo</h2>
+        <p>Piezas pensadas para clases, encuentros y actividades. Antes de cada pedido puedes confirmar disponibilidad, detalles y opciones de entrega por WhatsApp.</p>
         <div class="shop-points">
           <span>Ropa</span>
           <span>Papelería</span>
@@ -46,8 +46,8 @@ const categories = [...new Set(merch.map((product) => product.category))];
     <div class="container">
       <div class="shop-catalog-head reveal">
         <div>
-          <span class="section-kicker">Colección</span>
-          <h2 class="section-title">Elige tu producto</h2>
+          <span class="section-kicker">Catálogo</span>
+          <h2 class="section-title">Encuentra lo que buscas</h2>
         </div>
         <ShopFilters categories={categories} />
       </div>
@@ -61,7 +61,7 @@ const categories = [...new Set(merch.map((product) => product.category))];
   import { site } from '../data/site.js';
 
   const openWhatsApp = (message) => {
-    const number = (site.whatsappNumber || '').replace(/\D/g, '');
+    const number = (site.whatsappNumber || '').replace(/D/g, '');
     const url = number
       ? `https://wa.me/${number}?text=${encodeURIComponent(message)}`
       : `https://wa.me/?text=${encodeURIComponent(message)}`;
@@ -78,7 +78,7 @@ const categories = [...new Set(merch.map((product) => product.category))];
     });
 
     document.getElementById('generalShopWhatsApp')?.addEventListener('click', () => {
-      openWhatsApp('Hola, quiero conocer la colección de merch de IEEE UAC y las opciones disponibles para comprar.');
+      openWhatsApp('Hola, quiero conocer la colección de IEEE UAC y las opciones disponibles para comprar.');
     });
   });
 </script>

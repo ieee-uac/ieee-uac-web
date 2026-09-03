@@ -4,30 +4,30 @@ export const members = [
     initial: 'C',
     name: 'Camila Cuentas',
     role: 'Presidenta',
-    bio: 'Desde la presidencia, Camila orienta la planeación general de IEEE UniAutónoma Student Branch y acompaña la coordinación de la Junta Directiva. Su rol articula las iniciativas de la rama, da seguimiento a los compromisos del equipo y representa a IEEE UAC en los espacios institucionales que correspondan. También impulsa una dinámica de trabajo enfocada en convertir ideas en actividades concretas, fortalecer la participación estudiantil y mantener una visión común para el crecimiento de la rama.'
+    bio: 'Camila lidera la planeación general de IEEE UAC, coordina el trabajo de la Junta Directiva y representa a la rama en los espacios institucionales correspondientes. También da seguimiento a iniciativas y acuerdos para mantener una línea de trabajo común durante el semestre.'
   },
   {
     initial: 'V',
-    name: 'Víctor Vargas',
+    name: 'Viktor Vargas',
     role: 'Vicepresidente',
-    bio: 'Víctor apoya la coordinación de las iniciativas de IEEE UAC y acompaña a la presidencia en el seguimiento de proyectos, actividades y procesos internos. Desde la vicepresidencia contribuye a conectar las diferentes áreas de trabajo, facilitar la ejecución de propuestas y mantener continuidad en las tareas de la Junta Directiva. Su función también fortalece la colaboración entre los integrantes y la búsqueda de nuevas oportunidades para la comunidad estudiantil.'
+    bio: 'Viktor acompaña la ejecución de proyectos y actividades, apoya a la presidencia en el seguimiento de tareas y facilita la coordinación entre las distintas áreas de la Junta Directiva.'
   },
   {
     initial: 'A',
-    name: 'Ariana Pérez',
+    name: 'Areana Pérez',
     role: 'Secretaria',
-    bio: 'Ariana contribuye a la organización interna de la rama mediante el registro y seguimiento de reuniones, acuerdos y compromisos de la Junta Directiva. Su trabajo ayuda a conservar una comunicación clara entre los integrantes, mantener la información ordenada y dar continuidad a las decisiones que se toman durante cada etapa de trabajo. La secretaría es un punto clave para que los procesos de IEEE UAC se desarrollen con estructura, trazabilidad y coordinación.'
+    bio: 'Areana organiza actas, acuerdos y seguimiento de reuniones. Su trabajo permite mantener la información de la Junta Directiva ordenada y asegurar continuidad entre las decisiones y su ejecución.'
   },
   {
     initial: 'M',
     name: 'Mauricio Barraza',
     role: 'Tesorero',
-    bio: 'Mauricio acompaña la planeación y el seguimiento de los recursos relacionados con las actividades de IEEE UAC. Desde la tesorería apoya el control de presupuestos, el registro de movimientos asociados a las iniciativas de la rama y la organización de recursos para futuras actividades. Su rol contribuye a que las decisiones financieras se tomen de forma responsable, clara y alineada con las necesidades de la organización.'
+    bio: 'Mauricio realiza el seguimiento de presupuestos y recursos vinculados a las iniciativas de IEEE UAC. Su labor ayuda a mantener claridad sobre los movimientos financieros y a planificar responsablemente cada actividad.'
   },
   {
     initial: 'T',
     name: 'Tania Barraza',
     role: 'Webmaster',
-    bio: 'Tania está a cargo del desarrollo, mantenimiento y evolución de la presencia web de IEEE UniAutónoma Student Branch. Su función incluye organizar el contenido digital, mantener actualizada la información de la rama y cuidar que la experiencia de navegación sea clara tanto en computador como en dispositivos móviles. Desde el rol de webmaster también apoya la identidad digital de IEEE UAC y la integración de sus canales oficiales, actividades, equipo y recursos en un mismo espacio.'
+    bio: 'Tania desarrolla y mantiene el sitio web de IEEE UAC, organiza su contenido y cuida la experiencia de navegación en computador y dispositivos móviles. También apoya la coherencia de la identidad digital y la integración de los canales oficiales de la rama.'
   }
 ];

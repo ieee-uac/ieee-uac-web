@@ -29,7 +29,7 @@ import { site } from '../data/site.js';
         <img class="hero-card-logo" src={url('/assets/logo-white.png')} alt="">
         <span class="hero-card-kicker">IEEE UniAutónoma</span>
         <h2>Ingeniería<br>Comunidad<br>Proyección</h2>
-        <p>Experiencias que van más allá del aula</p>
+        <p>Conecta conocimientos con oportunidades</p>
       </div>
       <span class="floating-chip chip-events">Talleres</span>
       <span class="floating-chip chip-community">Capítulos</span>
@@ -43,7 +43,7 @@ import { site } from '../data/site.js';
     <SectionHead
       kicker="IEEE UAC"
       title="Más allá del aula"
-      copy="La rama reúne formación técnica, colaboración entre estudiantes y oportunidades para participar en iniciativas del ecosistema IEEE."
+      copy="La rama combina formación técnica, colaboración entre estudiantes y oportunidades para involucrarse en iniciativas del ecosistema IEEE."
     />
     <div class="info-grid">
       <InfoCard title="Aprendizaje técnico" text="Talleres, charlas y actividades para fortalecer conocimientos y explorar nuevas áreas de la ingeniería." />
@@ -55,15 +55,15 @@ import { site } from '../data/site.js';
 
 <section class="section">
   <div class="container split-panel">
-    <article class="panel red reveal"><span class="section-kicker" style="color:#ffd8dd">Inscripciones</span><h2>Haz parte de la rama</h2><p>Cuéntanos tus áreas de interés y cómo te gustaría participar en las actividades de IEEE UAC.</p><a class="btn btn-secondary" href={site.joinForm} target="_blank" rel="noopener noreferrer">Quiero unirme</a></article>
-    <article class="panel reveal"><span class="section-kicker">Estructura</span><h2>Conoce quiénes hacen IEEE UAC</h2><p>Explora la Junta Directiva, IEEE Computer Society y los grupos que impulsan el trabajo de la rama.</p><a class="btn btn-secondary" href={url('/acerca/')}>Ver organización</a></article>
+    <article class="panel red reveal"><span class="section-kicker" style="color:#ffd8dd">Inscripciones</span><h2>Encuentra tu lugar en IEEE UAC</h2><p>Cuéntanos qué áreas te interesan y de qué manera te gustaría involucrarte durante el semestre.</p><a class="btn btn-secondary" href={site.joinForm} target="_blank" rel="noopener noreferrer">Quiero unirme</a></article>
+    <article class="panel reveal"><span class="section-kicker">Proyección</span><h2>Conecta con el ecosistema IEEE</h2><p>Explora espacios especializados que acercan a la rama con áreas profesionales de la ingeniería y la computación.</p><a class="btn btn-secondary" href={url('/capitulos/')}>Ver IEEE Computer Society</a></article>
   </div>
 </section>
 
 <section class="section white" id="contacto">
   <div class="container contact-grid">
-    <div class="contact-card reveal"><span class="section-kicker">Canales oficiales</span><h2>Hablemos</h2><p>Escríbenos para propuestas, alianzas, consultas institucionales o información sobre nuestras actividades.</p><div class="contact-list"><div class="contact-row"><span>Correo</span><a href={`mailto:${site.email}`}>{site.email}</a></div><div class="contact-row"><span>Instagram</span><a href={site.instagram} target="_blank" rel="noopener noreferrer">{site.instagramHandle} ↗</a></div></div></div>
-    <div class="contact-card reveal"><span class="section-kicker">Novedades</span><h2>Sigue lo que viene</h2><p>Encuentra convocatorias, eventos, talleres y anuncios de la rama en nuestros canales oficiales.</p><a class="btn btn-primary" href={site.instagram} target="_blank" rel="noopener noreferrer">Ver Instagram</a></div>
+    <div class="contact-card reveal"><span class="section-kicker">Contacto institucional</span><h2>Escríbenos</h2><p>Para alianzas, propuestas o consultas relacionadas con IEEE UAC, utiliza nuestro correo oficial.</p><div class="contact-list"><div class="contact-row"><span>Correo</span><a href={`mailto:${site.email}`}>{site.email}</a></div></div></div>
+    <div class="contact-card reveal"><span class="section-kicker">Comunidad digital</span><h2>Síguenos de cerca</h2><p>En Instagram compartimos convocatorias, actividades, talleres y novedades de la rama.</p><a class="btn btn-primary" href={site.instagram} target="_blank" rel="noopener noreferrer">Ver Instagram</a></div>
   </div>
 </section>
 </BaseLayout>

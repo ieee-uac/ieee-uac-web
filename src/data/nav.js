@@ -4,9 +4,9 @@ export const navLinks = [
   {
     label: "Acerca de",
     children: [
-      { label: "Quiénes somos", href: "/acerca/" },
+      { label: "Nuestra rama", href: "/acerca/" },
       { label: "Junta directiva", href: "/equipo/" },
-      { label: "Capítulos y grupos", href: "/capitulos/" },
+      { label: "IEEE Computer Society", href: "/capitulos/" },
     ],
   },
   { label: "Actividades", href: "/eventos/" },
