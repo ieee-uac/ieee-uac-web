@@ -12,9 +12,9 @@ import { members } from '../data/members.js';
 >
   <PageHero
     breadcrumbs={[{ label: 'Inicio', href: '/' }, { label: 'Acerca de', href: '/acerca/' }, { label: 'Junta directiva' }]}
-    kicker="Junta Directiva 2026"
-    title="Nuestro equipo"
-    text="La Junta Directiva coordina las actividades y procesos de IEEE UniAutónoma Student Branch. Selecciona un perfil para conocer las responsabilidades de cada cargo."
+    kicker="Equipo 2026"
+    title="Personas detrás de la rama"
+    text="Conoce los roles que sostienen la organización de IEEE UAC y las responsabilidades de quienes integran su equipo directivo."
   />
   <section class="section white"><div class="container"><div class="team-grid" id="teamGrid">{members.map((member) => <MemberCard member={member} />)}</div></div></section>
   <ProfileDialog />
