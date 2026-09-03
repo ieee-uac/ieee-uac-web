@@ -12,20 +12,24 @@ const { categories } = Astro.props;
 </div>
 
 <script>
-  const filters = document.getElementById('shopFilters');
-  const grid = document.getElementById('shopGrid');
+  // astro:page-load: al llegar a /tienda/ vía <ClientRouter />, los botones de
+  // filtro necesitan que este listener se vuelva a registrar.
+  document.addEventListener('astro:page-load', () => {
+    const filters = document.getElementById('shopFilters');
+    const grid = document.getElementById('shopGrid');
 
-  if (filters && grid) {
-    filters.querySelectorAll('[data-filter]').forEach((button) => {
-      button.addEventListener('click', () => {
-        const filter = button.dataset.filter;
-        filters.querySelectorAll('[data-filter]').forEach((item) => {
-          item.classList.toggle('active', item === button);
-        });
-        grid.querySelectorAll('[data-category]').forEach((card) => {
-          card.hidden = filter !== 'Todos' && card.dataset.category !== filter;
+    if (filters && grid) {
+      filters.querySelectorAll('[data-filter]').forEach((button) => {
+        button.addEventListener('click', () => {
+          const filter = button.dataset.filter;
+          filters.querySelectorAll('[data-filter]').forEach((item) => {
+            item.classList.toggle('active', item === button);
+          });
+          grid.querySelectorAll('[data-category]').forEach((card) => {
+            card.hidden = filter !== 'Todos' && card.dataset.category !== filter;
+          });
         });
       });
-    });
-  }
+    }
+  });
 </script>

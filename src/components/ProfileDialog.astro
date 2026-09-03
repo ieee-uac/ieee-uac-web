@@ -6,29 +6,33 @@
 <dialog class="profile-dialog" id="profileDialog"><div class="dialog-inner"><button class="dialog-close" type="button" data-dialog-close aria-label="Cerrar">×</button><div class="dialog-avatar" data-dialog-avatar></div><h2 data-dialog-name></h2><div class="dialog-role" data-dialog-role></div><p class="dialog-bio" data-dialog-bio></p></div></dialog>
 
 <script>
-  const dialog = document.getElementById('profileDialog');
+  // astro:page-load: sin esto, las tarjetas de /equipo/ dejarían de abrir el
+  // diálogo después de llegar a la página vía una navegación con <ClientRouter />.
+  document.addEventListener('astro:page-load', () => {
+    const dialog = document.getElementById('profileDialog');
 
-  if (dialog) {
-    document.querySelectorAll('[data-member]').forEach((card) => {
-      card.addEventListener('click', () => {
-        dialog.querySelector('[data-dialog-avatar]').textContent = card.dataset.initial;
-        dialog.querySelector('[data-dialog-name]').textContent = card.dataset.name;
-        dialog.querySelector('[data-dialog-role]').textContent = card.dataset.role;
-        dialog.querySelector('[data-dialog-bio]').textContent = card.dataset.bio;
-        dialog.showModal();
+    if (dialog) {
+      document.querySelectorAll('[data-member]').forEach((card) => {
+        card.addEventListener('click', () => {
+          dialog.querySelector('[data-dialog-avatar]').textContent = card.dataset.initial;
+          dialog.querySelector('[data-dialog-name]').textContent = card.dataset.name;
+          dialog.querySelector('[data-dialog-role]').textContent = card.dataset.role;
+          dialog.querySelector('[data-dialog-bio]').textContent = card.dataset.bio;
+          dialog.showModal();
+        });
       });
-    });
 
-    dialog.querySelector('[data-dialog-close]')?.addEventListener('click', () => dialog.close());
+      dialog.querySelector('[data-dialog-close]')?.addEventListener('click', () => dialog.close());
 
-    // Cerrar al pulsar fuera del cuadro: el clic llega al <dialog>, que ocupa
-    // toda la pantalla, pero con coordenadas fuera de su caja visible.
-    dialog.addEventListener('click', (event) => {
-      const rect = dialog.getBoundingClientRect();
-      const outside =
-        event.clientX < rect.left || event.clientX > rect.right ||
-        event.clientY < rect.top || event.clientY > rect.bottom;
-      if (outside) dialog.close();
-    });
-  }
+      // Cerrar al pulsar fuera del cuadro: el clic llega al <dialog>, que ocupa
+      // toda la pantalla, pero con coordenadas fuera de su caja visible.
+      dialog.addEventListener('click', (event) => {
+        const rect = dialog.getBoundingClientRect();
+        const outside =
+          event.clientX < rect.left || event.clientX > rect.right ||
+          event.clientY < rect.top || event.clientY > rect.bottom;
+        if (outside) dialog.close();
+      });
+    }
+  });
 </script>

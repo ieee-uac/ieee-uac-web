@@ -68,13 +68,17 @@ const categories = [...new Set(merch.map((product) => product.category))];
     window.open(url, '_blank', 'noopener,noreferrer');
   };
 
-  document.querySelectorAll('[data-product]').forEach((button) => {
-    button.addEventListener('click', () => {
-      openWhatsApp(`Hola, quiero comprar ${button.dataset.product} de IEEE UAC. ¿Me comparten disponibilidad, valor y opciones de entrega?`);
+  // astro:page-load: al entrar a /tienda/ vía <ClientRouter /> (por ejemplo,
+  // desde el link "Tienda" del header) hay que reenganchar estos botones.
+  document.addEventListener('astro:page-load', () => {
+    document.querySelectorAll('[data-product]').forEach((button) => {
+      button.addEventListener('click', () => {
+        openWhatsApp(`Hola, quiero comprar ${button.dataset.product} de IEEE UAC. ¿Me comparten disponibilidad, valor y opciones de entrega?`);
+      });
     });
-  });
 
-  document.getElementById('generalShopWhatsApp')?.addEventListener('click', () => {
-    openWhatsApp('Hola, quiero conocer la colección de merch de IEEE UAC y las opciones disponibles para comprar.');
+    document.getElementById('generalShopWhatsApp')?.addEventListener('click', () => {
+      openWhatsApp('Hola, quiero conocer la colección de merch de IEEE UAC y las opciones disponibles para comprar.');
+    });
   });
 </script>

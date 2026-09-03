@@ -36,32 +36,36 @@ const isActive = (href) => normalize(url(href)) === current;
 </header>
 
 <script>
-  const menuBtn = document.getElementById('menuBtn');
-  const navLinksEl = document.getElementById('navLinks');
-  const aboutItem = document.querySelector('[data-dropdown]');
-  const aboutToggle = document.querySelector('[data-dropdown-toggle]');
+  // Con <ClientRouter />, este componente se reinserta en cada navegación pero el
+  // módulo no se reejecuta solo; astro:page-load lo dispara de nuevo cada vez.
+  document.addEventListener('astro:page-load', () => {
+    const menuBtn = document.getElementById('menuBtn');
+    const navLinksEl = document.getElementById('navLinks');
+    const aboutItem = document.querySelector('[data-dropdown]');
+    const aboutToggle = document.querySelector('[data-dropdown-toggle]');
 
-  if (menuBtn && navLinksEl) {
-    menuBtn.addEventListener('click', () => {
-      const open = navLinksEl.classList.toggle('open');
-      menuBtn.setAttribute('aria-expanded', String(open));
-    });
-  }
+    if (menuBtn && navLinksEl) {
+      menuBtn.addEventListener('click', () => {
+        const open = navLinksEl.classList.toggle('open');
+        menuBtn.setAttribute('aria-expanded', String(open));
+      });
+    }
 
-  if (aboutItem && aboutToggle) {
-    aboutToggle.addEventListener('click', (event) => {
-      if (window.matchMedia('(max-width: 980px)').matches) {
-        event.preventDefault();
-        const open = aboutItem.classList.toggle('open');
-        aboutToggle.setAttribute('aria-expanded', String(open));
-      }
-    });
-  }
+    if (aboutItem && aboutToggle) {
+      aboutToggle.addEventListener('click', (event) => {
+        if (window.matchMedia('(max-width: 980px)').matches) {
+          event.preventDefault();
+          const open = aboutItem.classList.toggle('open');
+          aboutToggle.setAttribute('aria-expanded', String(open));
+        }
+      });
+    }
 
-  document.querySelectorAll('.nav-links a').forEach((link) => {
-    link.addEventListener('click', () => {
-      navLinksEl?.classList.remove('open');
-      menuBtn?.setAttribute('aria-expanded', 'false');
+    document.querySelectorAll('.nav-links a').forEach((link) => {
+      link.addEventListener('click', () => {
+        navLinksEl?.classList.remove('open');
+        menuBtn?.setAttribute('aria-expanded', 'false');
+      });
     });
   });
 </script>
