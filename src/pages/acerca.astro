@@ -12,14 +12,14 @@ import InfoCard from '../components/InfoCard.astro';
 >
 <PageHero
   breadcrumbs={[{ label: 'Inicio', href: '/' }, { label: 'Acerca de' }]}
-  kicker="Acerca de"
+  kicker="Nuestra rama"
   title="IEEE UAC"
-  text="La Rama Estudiantil IEEE de la Universidad Autónoma del Caribe promueve experiencias de formación, colaboración y liderazgo para estudiantes interesados en ingeniería, tecnología e innovación."
+  text="IEEE UAC reúne a estudiantes de la Universidad Autónoma del Caribe en torno a proyectos, actividades técnicas y oportunidades de participación dentro del ecosistema IEEE."
 />
 <section class="section white"><div class="container"><SectionHead
-  kicker="Quiénes somos"
-  title="Una rama estudiantil con enfoque práctico"
-  copy="IEEE UAC funciona como un punto de encuentro para estudiantes que quieren complementar su formación universitaria con actividades, proyectos y conexiones profesionales. La rama facilita espacios para aprender entre pares, participar en iniciativas y acercarse al ecosistema IEEE."
-/><div class="info-grid"><InfoCard icon="A" title="Aprender" text="Fortalecer conocimientos mediante talleres, charlas, retos y experiencias aplicadas." /><InfoCard icon="C" title="Conectar" text="Crear vínculos con estudiantes, profesionales, capítulos y comunidades afines." /><InfoCard icon="L" title="Liderar" text="Desarrollar capacidad de organización, comunicación y gestión de iniciativas estudiantiles." /></div></div></section>
+  kicker="Nuestro propósito"
+  title="Experiencias que amplían tu recorrido universitario"
+  copy="La rama acerca a sus miembros a retos técnicos, trabajo en equipo, organización de iniciativas y vínculos con comunidades profesionales, llevando la ingeniería a espacios más allá del aula."
+/><div class="info-grid"><InfoCard icon="E" title="Explorar" text="Descubrir nuevas áreas mediante talleres, charlas, retos y experiencias aplicadas." /><InfoCard icon="C" title="Colaborar" text="Trabajar con otros estudiantes, capítulos y comunidades en iniciativas con objetivos compartidos." /><InfoCard icon="I" title="Impulsar" text="Proponer ideas, asumir responsabilidades y convertirlas en proyectos con impacto dentro de la rama." /></div></div></section>
 <section class="section"><div class="container split-panel"><article class="panel reveal"><span class="section-kicker">Organización</span><h2>Junta Directiva</h2><p>Conoce a quienes coordinan la planeación, administración, comunicación y presencia digital de la rama.</p><a class="btn btn-secondary" href={url('/equipo/')}>Ver equipo</a></article><article class="panel reveal"><span class="section-kicker">Capítulos y grupos</span><h2>IEEE Computer Society</h2><p>Explora el capítulo actualmente vinculado a la rama y sus principales áreas de interés.</p><a class="btn btn-secondary" href={url('/capitulos/')}>Ver capítulo</a></article></div></section>
 </BaseLayout>
