@@ -1,8 +1,6 @@
 ---
 import { url } from '../lib/url.js';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import SectionHead from '../components/SectionHead.astro';
-import InfoCard from '../components/InfoCard.astro';
 import { site } from '../data/site.js';
 ---
 
@@ -11,10 +9,6 @@ import { site } from '../data/site.js';
   description="Sitio oficial de IEEE UniAutónoma Student Branch de la Universidad Autónoma del Caribe."
 >
 <section class="hero hero-showcase">
-  <div class="hero-watermark" aria-hidden="true">
-    <img src={url('/assets/logo-white.png')} alt="">
-  </div>
-
   <div class="container hero-showcase-grid">
     <div class="hero-copy reveal">
       <span class="eyebrow">IEEE · Universidad Autónoma del Caribe</span>
@@ -41,17 +35,65 @@ import { site } from '../data/site.js';
   </div>
 </section>
 
-<section class="section white" id="nosotros">
+<section class="section experience-section" id="nosotros">
   <div class="container">
-    <SectionHead
-      kicker="IEEE UAC"
-      title="Más allá del aula"
-      copy="La rama combina formación técnica, colaboración entre estudiantes y oportunidades para involucrarse en iniciativas del ecosistema IEEE."
-    />
-    <div class="info-grid">
-      <InfoCard title="Aprendizaje técnico" text="Talleres, charlas y actividades para fortalecer conocimientos y explorar nuevas áreas de la ingeniería." />
-      <InfoCard title="Red IEEE" text="Conexiones con estudiantes, profesionales y comunidades que comparten intereses académicos y tecnológicos." />
-      <InfoCard title="Experiencia en equipo" text="Proyectos y responsabilidades que permiten desarrollar organización, liderazgo y trabajo colaborativo." />
+    <header class="experience-heading reveal">
+      <span class="experience-kicker">IEEE UAC</span>
+      <h2>Más allá del aula</h2>
+      <p>Una comunidad que transforma la experiencia universitaria a través de proyectos, conexiones y aprendizaje compartido.</p>
+      <span class="experience-accent" aria-hidden="true"></span>
+    </header>
+
+    <div class="experience-grid">
+      <article class="experience-card experience-card-featured reveal">
+        <div class="experience-card-copy">
+          <span class="experience-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" role="img">
+              <rect x="4.5" y="6" width="23" height="18" rx="2.5"></rect>
+              <path d="M11.5 12.5 8 16l3.5 3.5M20.5 12.5 24 16l-3.5 3.5M18 10l-4 12"></path>
+            </svg>
+          </span>
+          <h3>Aprendizaje aplicado</h3>
+          <span class="experience-mini-line" aria-hidden="true"></span>
+          <p>Talleres, charlas y actividades para fortalecer conocimientos y explorar nuevas áreas de la ingeniería.</p>
+        </div>
+        <div class="experience-photo experience-photo-tech">
+          <img src="https://images.unsplash.com/photo-1518770660439-4636190af475?auto=format&fit=crop&w=1200&q=82" alt="Estudiante trabajando con componentes electrónicos" loading="lazy" decoding="async">
+        </div>
+      </article>
+
+      <article class="experience-card experience-card-network reveal">
+        <span class="experience-icon" aria-hidden="true">
+          <svg viewBox="0 0 32 32" role="img">
+            <circle cx="12" cy="11" r="4"></circle>
+            <circle cx="22" cy="13" r="3.5"></circle>
+            <path d="M4.5 25c.6-5.2 3.3-8 7.5-8s6.9 2.8 7.5 8M18 19c1.1-1.4 2.6-2.1 4.5-2.1 3.3 0 5.2 2.2 5.7 6.1"></path>
+          </svg>
+        </span>
+        <h3>Red IEEE</h3>
+        <span class="experience-mini-line" aria-hidden="true"></span>
+        <p>Conexiones con estudiantes, profesionales y comunidades que comparten intereses académicos y tecnológicos.</p>
+        <div class="experience-dots" aria-hidden="true"></div>
+      </article>
+
+      <article class="experience-card experience-card-team reveal">
+        <div class="experience-card-copy">
+          <span class="experience-icon" aria-hidden="true">
+            <svg viewBox="0 0 32 32" role="img">
+              <circle cx="10" cy="11" r="3.5"></circle>
+              <circle cx="22" cy="11" r="3.5"></circle>
+              <circle cx="16" cy="8" r="3.3"></circle>
+              <path d="M3.5 24c.5-4.6 2.7-7 6.5-7 2.2 0 3.9.8 5 2.3M28.5 24c-.5-4.6-2.7-7-6.5-7-2.2 0-3.9.8-5 2.3M10 25c.6-5.3 2.7-8 6-8s5.4 2.7 6 8"></path>
+            </svg>
+          </span>
+          <h3>Experiencia en equipo</h3>
+          <span class="experience-mini-line" aria-hidden="true"></span>
+          <p>Proyectos y responsabilidades que permiten desarrollar organización, liderazgo y trabajo colaborativo.</p>
+        </div>
+        <div class="experience-photo experience-photo-team">
+          <img src="https://images.unsplash.com/photo-1521737711867-e3b97375f902?auto=format&fit=crop&w=1000&q=82" alt="Equipo de estudiantes colaborando" loading="lazy" decoding="async">
+        </div>
+      </article>
     </div>
   </div>
 </section>
