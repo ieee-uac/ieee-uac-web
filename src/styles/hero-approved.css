@@ -9,26 +9,26 @@
   z-index: 2;
 }
 
-/* La marca de agua ocupa solo la zona clara del hero para no quedar detrás de la tarjeta. */
+/* La marca de agua ocupa la zona clara y se recorta antes de llegar a la tarjeta roja. */
 .hero-watermark {
   position: absolute;
   z-index: 0;
   left: 0;
   top: 0;
-  width: 54%;
+  width: 68%;
   height: 100%;
   overflow: hidden;
   pointer-events: none;
   opacity: .045;
 }
 
-/* Se centra únicamente la parte visible del fénix y se conserva completo en vertical,
-   incluyendo la llama inferior. */
+/* Se muestra solo el fénix del recurso original. Su centro visual queda en el espacio
+   blanco entre el copy y la tarjeta, con la llama inferior completa y sin invadir la tarjeta. */
 .hero-watermark img {
   position: absolute;
-  left: 50%;
+  left: 60%;
   top: 50%;
-  height: 92%;
+  height: 90%;
   width: auto;
   max-width: none;
   transform: translate(-14%, -50%);
@@ -126,11 +126,10 @@
   bottom: 4px;
 }
 
-/* Los chips siguen flotando, pero quedan apoyados en los bordes de la tarjeta
-   para no cubrir ni el logo, ni los títulos, ni el texto inferior. */
+/* Los chips mantienen el movimiento original y no cubren el contenido. */
 .chip-community {
-  left: 10%;
-  top: 0;
+  left: 16%;
+  top: 12px;
   bottom: auto;
 }
 
@@ -157,14 +156,14 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 50%;
+    height: 48%;
     opacity: .035;
   }
 
   .hero-watermark img {
-    left: 50%;
+    left: 54%;
     top: 50%;
-    height: 90%;
+    height: 88%;
     transform: translate(-14%, -50%);
   }
 
@@ -177,7 +176,7 @@
     width: min(455px, 88%);
   }
 
-  .chip-community { left: 9%; top: 0; }
+  .chip-community { left: 15%; top: 10px; }
   .chip-projects { right: 0; top: 52%; }
   .chip-events { left: 24%; bottom: -10px; }
 }
@@ -187,14 +186,14 @@
     left: 0;
     top: 0;
     width: 100%;
-    height: 45%;
+    height: 43%;
     opacity: .03;
   }
 
   .hero-watermark img {
-    left: 50%;
+    left: 52%;
     top: 50%;
-    height: 88%;
+    height: 86%;
     transform: translate(-14%, -50%);
   }
 
@@ -227,7 +226,7 @@
     font-size: .9rem;
   }
 
-  .chip-community { left: 8%; top: 2px; }
+  .chip-community { left: 13%; top: 10px; }
   .chip-projects { right: -2px; top: 52%; }
   .chip-events { left: 24px; bottom: -10px; }
 }
