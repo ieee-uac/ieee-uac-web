@@ -165,3 +165,69 @@
 .footer-links a { color: #eadadd; text-decoration: none; }
 .footer-links a:hover { color: #fff; }
 .footer-bottom { margin-top: 34px; padding-top: 22px; border-top: 1px solid rgba(255,255,255,.12); color: #a99195; font-size: .84rem; }
+
+/* Una sola marca de agua global. Permanece fija al hacer scroll para que el fénix
+   conserve exactamente la misma posición y nunca aparezcan dos copias. */
+.site-phoenix-watermark {
+  position: fixed;
+  z-index: 2;
+  left: 70%;
+  top: 55%;
+  width: 540px;
+  height: 630px;
+  overflow: hidden;
+  pointer-events: none;
+  opacity: .024;
+  transform: translate(-50%, -50%);
+}
+
+.site-phoenix-watermark img {
+  position: absolute;
+  left: -18px;
+  top: 50%;
+  height: 620px;
+  width: auto;
+  max-width: none;
+  transform: translateY(-50%);
+  clip-path: inset(0 72% 0 0);
+  filter: brightness(0) saturate(100%) invert(12%) sepia(57%) saturate(3600%) hue-rotate(338deg) brightness(78%) contrast(94%);
+}
+
+.site-header,
+.site-footer {
+  position: relative;
+}
+
+.site-footer {
+  z-index: 3;
+}
+
+@media (max-width: 980px) {
+  .site-phoenix-watermark {
+    left: 62%;
+    top: 54%;
+    width: 440px;
+    height: 520px;
+    opacity: .02;
+  }
+
+  .site-phoenix-watermark img {
+    left: -12px;
+    height: 510px;
+  }
+}
+
+@media (max-width: 640px) {
+  .site-phoenix-watermark {
+    left: 50%;
+    top: 56%;
+    width: 330px;
+    height: 400px;
+    opacity: .017;
+  }
+
+  .site-phoenix-watermark img {
+    left: -8px;
+    height: 390px;
+  }
+}
