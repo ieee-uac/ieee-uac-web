@@ -130,7 +130,7 @@
 /* Chips flotantes organizados alrededor de la tarjeta sin cubrir logo, títulos ni copy. */
 .chip-community {
   left: 15%;
-  top: 12px;
+  top: -32px;
   bottom: auto;
   transform: rotate(-4deg);
 }
@@ -181,7 +181,7 @@
     width: min(455px, 88%);
   }
 
-  .chip-community { left: 16%; top: 8px; }
+  .chip-community { left: 16%; top: -30px; }
   .chip-projects { right: 0; top: 40%; }
   .chip-events { left: 28%; bottom: -24px; }
 }
@@ -237,7 +237,7 @@
     font-size: .86rem;
   }
 
-  .chip-community { left: 11%; top: -4px; }
+  .chip-community { left: 11%; top: -26px; }
   .chip-projects { right: -2px; top: 44%; }
   .chip-events { left: 26px; bottom: -22px; }
 }
