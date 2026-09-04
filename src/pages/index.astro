@@ -11,14 +11,17 @@ import { site } from '../data/site.js';
   description="Sitio oficial de IEEE UniAutónoma Student Branch de la Universidad Autónoma del Caribe."
 >
 <section class="hero hero-showcase">
+  <div class="hero-watermark" aria-hidden="true">
+    <img src={url('/assets/logo-white.png')} alt="">
+  </div>
+
   <div class="container hero-showcase-grid">
     <div class="hero-copy reveal">
       <span class="eyebrow">IEEE · Universidad Autónoma del Caribe</span>
-      <h1>Ingeniería que conecta <span>Ideas que toman forma</span></h1>
-      <p>Un espacio para ampliar tu experiencia universitaria mediante proyectos, actividades técnicas y vínculos con la comunidad IEEE.</p>
+      <h1>Ideas que conectan <span>Tecnología que transforma</span></h1>
+      <p>Construye nuevas experiencias, conecta con una comunidad global y lleva tus ideas más allá del aula.</p>
       <div class="hero-actions">
-        <a class="btn btn-primary" href={url('/acerca/')}>Conoce IEEE UAC</a>
-        <a class="hero-text-link" href={url('/eventos/')}>Ver actividades <span aria-hidden="true">→</span></a>
+        <a class="btn btn-primary" href={url('/acerca/')}>Conócenos</a>
       </div>
     </div>
 
@@ -27,13 +30,13 @@ import { site } from '../data/site.js';
       <div class="hero-ring hero-ring-b"></div>
       <div class="hero-floating-card">
         <img class="hero-card-logo" src={url('/assets/logo-white.png')} alt="">
-        <span class="hero-card-kicker">IEEE UniAutónoma</span>
-        <h2>Ingeniería<br>Comunidad<br>Proyección</h2>
-        <p>Conecta conocimientos con oportunidades</p>
+        <h2>Innovación<br>Experiencia<br>Equipo<br>Evolución</h2>
+        <div class="hero-card-rule"></div>
+        <p>Una comunidad donde las ideas encuentran apoyo, equipo y nuevas posibilidades</p>
       </div>
-      <span class="floating-chip chip-events">Talleres</span>
       <span class="floating-chip chip-community">Capítulos</span>
       <span class="floating-chip chip-projects">Proyectos</span>
+      <span class="floating-chip chip-events">Talleres</span>
     </div>
   </div>
 </section>
