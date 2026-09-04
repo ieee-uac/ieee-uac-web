@@ -28,6 +28,10 @@ const { title, description } = Astro.props;
   <ClientRouter />
 </head>
 <body>
+  <div class="site-phoenix-watermark" aria-hidden="true">
+    <img src={url('/assets/logo-white.png')} alt="">
+  </div>
+
   <Header />
   <main>
     <slot />
